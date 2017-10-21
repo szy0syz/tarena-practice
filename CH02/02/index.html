@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CH02-02:伪类优先级比较</title>
+    <style type="text/css">
+        #s1 { /* 100 */
+            color: red;
+        }
+
+        #d1 span { /* 100+1=101 */
+            color: green;
+        }
+
+        #d1 #s1 { /* 100+100=200 */
+            color: yellow;
+        }
+
+        #d1 p span { /* 100+1+1=102 */
+            color: pink;
+        }
+
+        .important span { /* 10+1=11 */
+            color: blue;
+        }
+
+        #p1 span { /* 100+1=101 */
+            color: purple;
+        }
+
+        span { /* 1 */
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+    <p id="p1" class="important">
+        <span id="s1">div中的p中的span</span>
+    </p>
+</div>
+</body>
+</html>

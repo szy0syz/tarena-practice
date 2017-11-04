@@ -6,6 +6,7 @@
     <style type="text/css">
         a, a:link, a:visited, a:hover, a:active {
             color: #000;
+            text-decoration: none;
         }
 
         p, ul{
@@ -16,6 +17,10 @@
         #container{
             width: 990px;
             margin: 0 auto;
+        }
+
+        #container a{
+            color: #ffffff;
         }
 
         #nav{
@@ -70,8 +75,6 @@
             cursor: pointer;
         }
 
-
-
         /* ----nav3---- */
         #nav3{
             border: 2px solid #e64346;
@@ -84,6 +87,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            padding-top: 5px;
         }
 
         #nav3 li{
@@ -91,16 +95,20 @@
             height: 28px;
             line-height: 28px;
             padding-left: 8px;
-            width: 194px;
+            width: 192px;
+            border-top: 1px solid transparent;
             border-bottom: 1px solid transparent;
-
         }
 
         #nav3 li:hover{
+            border-top: 1px solid lightgray;
             border-bottom: 1px solid lightgray;
             cursor: pointer;
         }
 
+        #nav3 a{
+            color: #000000;
+        }
 
     </style>
 </head>
@@ -112,24 +120,24 @@
                 <i>v</i>
             </p>
             <ul id="nav2">
-                <li>首页</li>
-                <li>服装城</li>
-                <li>食品</li>
-                <li>团购</li>
-                <li>闪购</li>
-                <li>拍卖</li>
-                <li>全球购</li>
-                <li>生鲜</li>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">服装城</a></li>
+                <li><a href="#">食品</a></li>
+                <li><a href="#">团购</a></li>
+                <li><a href="#">闪购</a></li>
+                <li><a href="#">拍卖</a></li>
+                <li><a href="#">全球购</a></li>
+                <li><a href="#">生鲜</a></li>
             </ul>
         </nav>
-        <nav id="nav3">
+        <div id="nav3">
             <ul>
-                <li>图书、音像、数字商品</li>
-                <li>家用电器</li>
-                <li>手机、电脑、数据线</li>
-                <li>动画、漫画、游戏</li>
+                <li><a href="#">图书、音像、数字商品</a></li>
+                <li><a href="#">家用电器</a></li>
+                <li><a href="#">手机、电脑、数据线</a></li>
+                <li><a href="#">动画、漫画、游戏</a></li>
             </ul>
-        </nav>
+        </div>
     </div>
 
 </body>

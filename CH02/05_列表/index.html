@@ -8,6 +8,11 @@
             color: #000;
         }
 
+        p, ul{
+            margin: 0;
+            padding: 0;
+        }
+
         #container{
             width: 990px;
             margin: 0 auto;
@@ -20,6 +25,7 @@
         }
 
         #nav>p{
+            display: inline-block;
             background-color: #cd2a2c;
             height: 40px;
             width: 210px;
@@ -43,17 +49,58 @@
 
         /* ----nav2---- */
         #nav2{
+            margin-left: -5px;
+            display: inline-block;
+            list-style: none;
+            line-height: 40px;
+        }
+
+        #nav2 li{
+            float: left;
+            width: 60px;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        #nav2 li:hover{
+            background-color: #cd2a2c;
+            cursor: pointer;
+        }
+
+
+
+        /* ----nav3---- */
+        #nav3{
             border: 2px solid #e64346;
             width: 206px;
             height: 300px;
             border-top: 0;
         }
 
-        #nav2 ul{
+        #nav3 ul{
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
+        #nav3 li{
+            font-size: 14px;
+            height: 28px;
+            line-height: 28px;
+            padding-left: 8px;
+            width: 194px;
+            border-bottom: 1px solid transparent;
+
+        }
+
+        #nav3 li:hover{
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
@@ -64,8 +111,18 @@
                 <a href="#">全部商品分类</a>
                 <i>v</i>
             </p>
+            <ul id="nav2">
+                <li>首页</li>
+                <li>服装城</li>
+                <li>食品</li>
+                <li>团购</li>
+                <li>闪购</li>
+                <li>拍卖</li>
+                <li>全球购</li>
+                <li>生鲜</li>
+            </ul>
         </nav>
-        <nav id="nav2">
+        <nav id="nav3">
             <ul>
                 <li>图书、音像、数字商品</li>
                 <li>家用电器</li>

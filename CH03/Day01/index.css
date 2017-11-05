@@ -1,0 +1,10 @@
+/* 测试样式 */
+#top,#top_main,#nav,#banner,#main,#foot_box,#footer{
+    border: 1px solid #000;
+}
+
+/* 布局样式 */
+#top,#top_main,#nav,#banner,#main,#foot_box,#footer{
+    width: 1211px;
+    margin: 0 auto;
+}

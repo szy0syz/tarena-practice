@@ -1,0 +1,29 @@
+/* 页面通用样式 */
+body {
+    font: 12px "黑软雅黑", Arial, Helvetica, sans-serif;
+    color: #666;
+}
+
+/* 清除默认样式在 minireset.css 中 */
+
+.lf {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+a{
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ff0700;
+    text-decoration: underline;
+}

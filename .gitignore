@@ -67,3 +67,4 @@ typings/
 .idea/tarena-practice.iml
 .idea/workspace.xml
 
+.DS_Store

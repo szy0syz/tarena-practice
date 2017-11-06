@@ -71,7 +71,7 @@ li.service {
 }
 
 /* 客户服务 */
-li.service a {
+li.service>a {
     /* 左右内边距模拟元素宽度 */
     padding: 0 15px;
     /* 行内快，高度(26)，行高 */
@@ -84,8 +84,13 @@ li.service a {
     /* 背景 */
     background: url("../Images/jt_down.jpg") no-repeat 94% center;
 }
-
-li.service a:hover {
+/*li.service>a:hover {*/
+    /*!* 边框颜色为灰色，背景颜色改白色，更换背景图 *!*/
+    /*border-color: #ddd;*/
+    /*background-color: #fff;*/
+    /*background-image: url("../Images/jt_up.jpg");*/
+/*}*/
+li.service:hover>a{
     /* 边框颜色为灰色，背景颜色改白色，更换背景图 */
     border-color: #ddd;
     background-color: #fff;
@@ -102,6 +107,8 @@ li.service ul {
     border: 1px solid #ddd;
     border-top: 0;
     background-color: #fff;
+    /* 默认隐藏 */
+    display: none;
 }
 /* 客户服务->弹出菜单项目 */
 li.service ul li {
@@ -109,5 +116,7 @@ li.service ul li {
     height: 30px;
     line-height: 30px;
     text-align: center;
-
+}
+li.service:hover ul{
+    display: block;
 }

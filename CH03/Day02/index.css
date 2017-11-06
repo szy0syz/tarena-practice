@@ -1,0 +1,122 @@
+/* 测试样式 */
+#top_main, #nav, #banner, #main, #foot_box, #footer {
+    border: 1px solid #000;
+}
+
+/* 布局样式 */
+#top_box, #top_main, #nav, #banner, #main, #foot_box, #footer {
+    width: 1211px;
+    margin: 0 auto;
+}
+
+/* #top 灰色长条 */
+#top {
+    /* 宽度，高度，背景颜色，行高 */
+    width: 100%;
+    height: 30px;
+    background-color: #f7f7f7;
+    line-height: 30px;
+}
+
+#top_box img {
+    /* 上外边距，右外边距 */
+    margin-top: 9px;
+    margin-right: 5px;
+}
+
+#top_box > ul > li {
+    float: left;
+    margin-right: 5px;
+}
+
+/* 列表项中的b标记，模拟分割线、边框 */
+#top_box > ul > li b {
+    border-left: 2px solid #ddd;
+    margin-right: 5px;
+}
+
+/* 会员俱乐部：背景图像处理 */
+li.vip a {
+    /* 左内边距：(24+5)，背景属性 */
+    padding-left: 29px;
+    background: url("../Images/vip.jpg") no-repeat left center;
+}
+
+/* 企业频道：背景图像处理 */
+li.bjd a {
+    /* 左内边距：26，背景属性 */
+    padding-left: 26px;
+    background: url("../Images/dakehu.jpg") no-repeat left center;
+}
+
+/* 手机京东：背景图像切换 */
+li.app_jd a {
+    /* 左内边距，行内快，高度，行高，背景属性 */
+    padding-left: 18px;
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    background: url("../Images/iconlist_2.png") no-repeat -128px -360px;
+}
+
+/* 手机京东背景换图  */
+li.app_jd a:hover {
+    background-position: -128px -399px;
+}
+
+/* 客户服务 相对定位 */
+li.service {
+    /* 相对定位 */
+    position: relative;
+}
+
+/* 客户服务 */
+li.service>a {
+    /* 左右内边距模拟元素宽度 */
+    padding: 0 15px;
+    /* 行内快，高度(26)，行高 */
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    /* 边框：左右上(透明) */
+    border: 1px solid transparent;
+    border-bottom: 0;
+    /* 背景 */
+    background: url("../Images/jt_down.jpg") no-repeat 94% center;
+}
+/*li.service>a:hover {*/
+    /*!* 边框颜色为灰色，背景颜色改白色，更换背景图 *!*/
+    /*border-color: #ddd;*/
+    /*background-color: #fff;*/
+    /*background-image: url("../Images/jt_up.jpg");*/
+/*}*/
+li.service:hover>a{
+    /* 边框颜色为灰色，背景颜色改白色，更换背景图 */
+    border-color: #ddd;
+    background-color: #fff;
+    background-image: url("../Images/jt_up.jpg");
+}
+
+/* 客户服务->弹出菜单 */
+li.service ul {
+    /* 绝对定位，偏移属性，宽度 边框 背景色 */
+    position: absolute;
+    top: 27px;
+    left: 7px;
+    width: 80px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background-color: #fff;
+    /* 默认隐藏 */
+    display: none;
+}
+/* 客户服务->弹出菜单项目 */
+li.service ul li {
+    /* 高度 行高 文字水平居中 */
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+li.service:hover ul{
+    display: block;
+}

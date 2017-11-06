@@ -120,3 +120,35 @@ li.service ul li {
 li.service:hover ul{
     display: block;
 }
+
+/* -------------------------------------------------- */
+
+
+
+/* 2. top_main 开始~~~~~~~ */
+
+#top_main{
+    height: 80px;
+}
+
+.search_box{
+    width: 500px;
+    margin-left: 40px;
+    margin-right: 80px;
+}
+
+.search_box>div{
+
+}
+
+.search_hot_items{
+
+}
+
+.search_hot_items li{
+    float: left;
+}
+
+div#top_main:after{
+    clear: both;
+}

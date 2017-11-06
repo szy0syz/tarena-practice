@@ -129,20 +129,38 @@ li.service:hover ul{
 
 #top_main{
     height: 80px;
+    position: relative;
+}
+
+#top_main>img{
+    position: relative;
+    top: 7px;
 }
 
 .search_box{
     width: 500px;
     margin-left: 40px;
     margin-right: 80px;
+    position: relative;
+    top: 18px;
 }
 
 .search_box>div{
-
+    background-color: red;
+    border: 3px solid red;
+    height: 32px;
 }
 
-.search_hot_items{
+.search_inp{
+    height: 26px;
+    width: 420px;
+}
 
+.search_btn{
+    height: 26px;
+    width: 70px;
+    background-color: red;
+    border: 0;
 }
 
 .search_hot_items li{
@@ -151,4 +169,28 @@ li.service:hover ul{
 
 div#top_main:after{
     clear: both;
+}
+
+.top_box{
+    height: 30px;
+    width: 80px;
+    border: 1px solid #666;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+/*.top_box>a{*/
+    /*li*/
+/*}*/
+
+/* 我的京东 */
+.my_jd{
+    margin-right: 12px;
+}
+
+/* 我的购物车 */
+.my_cart{
+    margin-right: 100px;
 }

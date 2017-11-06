@@ -133,12 +133,14 @@ li.service:hover ul {
     position: relative;
 }
 
-#top_main > img {
+#top_main > a {
     position: relative;
     top: 7px;
 }
 
-.search_box {
+#search_box {
+    /* 左浮动，宽度，左右外边距 */
+    float: left;
     width: 500px;
     margin-left: 40px;
     margin-right: 80px;
@@ -146,24 +148,36 @@ li.service:hover ul {
     top: 18px;
 }
 
-.search_box > div {
-    background-color: red;
-    border: 3px solid red;
+#search_box div.search {
+    /* 充当搜索栏背景那一横条 */
+    /* 宽度，高度，背景颜色 */
+    width: 100%; /*可省略*/
     height: 32px;
+    background-color: #E4393C; /*#E4393C号称"京东红"*/
+    /* 边框或内边距 */
+    /*border: 3px solid #E4393C;*/
+    padding: 3px;
+
 }
 
-.search_inp {
-    height: 26px;
+#search_box input.search_inp {
+    /* 宽度，高度，取消边框，奇效轮廓，改变框模型 */
     width: 420px;
+    height: 26px;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
 }
 
-.search_btn {
+#search_box .search_btn {
+    /* 宽度，高度，取消边框，背景颜色，文字：大小，颜色，加粗 */
     height: 26px;
     width: 70px;
-    background-color: red;
+    background-color: #E4393C;
     border: 0;
     color: #fff;
     font-size: 14px;
+    font-weight: bold;
 }
 
 .search_hot_items li {

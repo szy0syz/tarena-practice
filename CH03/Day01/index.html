@@ -61,13 +61,19 @@
 </header>
 
 <!-- 2. LOGO和搜索框 -->
-<div id="top_main">
-    <img class="lf" src="../Images/logo-201305.png" alt="logo">
-    <div class="search_box lf">
-        <div>
-            <input type="text" class="search_inp">
+<div id="top_main"> <!--这里如果给其所有子元素都设为浮动后，它自己内容为空，则下面能浮多少上来就上来多少元素了！-->
+    <!--(1)LOGO-->
+    <a href="#" class="lf" >
+        <img src="../Images/logo-201305.png" alt="logo">
+    </a>
+    <!--(2)搜索框和热门搜索-->
+    <div id="search_box">
+        <!--上：搜索框和按钮-->
+        <div class="search">
+            <input type="text" title="search_inp" class="search_inp">
             <button type="button" class="search_btn">搜索</button>
         </div>
+        <!--下：热门搜索-->
         <ul class="search_hot_items">
             <li>热门搜索 : </li>
             <li><a href="#">家纺11月大促</a></li>
@@ -79,9 +85,11 @@
             <li><a href="#">南极人家纺</a></li>
         </ul>
     </div>
+    <!--(3)我的京东-->
     <div class="top_box my_cart rf">
         <a href="#"></a>
     </div>
+    <!--(4)去购物车结算-->
     <div class="top_box my_jd rf">
         <a href="#"></a>
     </div>

@@ -58,13 +58,20 @@ li.app_jd a {
     line-height: 22px;
     background: url("../Images/iconlist_2.png") no-repeat -128px -360px;
 }
+
 /* 手机京东背景换图  */
-li.app_jd a:hover{
+li.app_jd a:hover {
     background-position: -128px -399px;
 }
 
+/* 客户服务 相对定位 */
+li.service {
+    /* 相对定位 */
+    position: relative;
+}
+
 /* 客户服务 */
-li.service a{
+li.service a {
     /* 左右内边距模拟元素宽度 */
     padding: 0 15px;
     /* 行内快，高度(26)，行高 */
@@ -72,14 +79,35 @@ li.service a{
     height: 26px;
     line-height: 26px;
     /* 边框：左右上(透明) */
-    border:  1px solid transparent;
+    border: 1px solid transparent;
     border-bottom: 0;
     /* 背景 */
     background: url("../Images/jt_down.jpg") no-repeat 94% center;
 }
-li.service a:hover{
+
+li.service a:hover {
     /* 边框颜色为灰色，背景颜色改白色，更换背景图 */
     border-color: #ddd;
     background-color: #fff;
     background-image: url("../Images/jt_up.jpg");
+}
+
+/* 客户服务->弹出菜单 */
+li.service ul {
+    /* 绝对定位，偏移属性，宽度 边框 背景色 */
+    position: absolute;
+    top: 27px;
+    left: 7px;
+    width: 80px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background-color: #fff;
+}
+/* 客户服务->弹出菜单项目 */
+li.service ul li {
+    /* 高度 行高 文字水平居中 */
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
 }

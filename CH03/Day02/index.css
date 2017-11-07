@@ -228,3 +228,56 @@ div#top_main:after {
     background: url("../Images/gwc.jpg") no-repeat center;
     background-size: contain;
 }
+
+
+
+
+/* ----footer start---- */
+#footer{
+    background-color: #f7f7f7;
+    padding: 15px 0;
+}
+
+.mod_copyright_split{
+    margin: 0 10px;
+    color: #ccc;
+}
+
+.mod_copyright_links{
+    text-align: center;
+}
+
+.mod_copyright_info{
+    padding: 10px 0;
+    text-align: center;
+}
+
+.mod_copyright_auth{
+    text-align: center;
+}
+
+.mod_copyright_auth_ico{
+    /* 宽度，高度，行内块元素 */
+    /* 因为a们为行内块元素所以得先修改为行内块后才允许修改宽高 */
+    width: 108px;
+    height: 40px;
+    display: inline-block;
+}
+.mod_copyright_auth_ico_1{
+    background-image: url("../Images/jy.jpg");
+}
+.mod_copyright_auth_ico_2{
+    background-image: url("../Images/kx.jpg");
+}
+.mod_copyright_auth_ico_3{
+    background-image: url("../Images/cy.jpg");
+}
+.mod_copyright_auth_ico_4{
+    width: 112px;
+    background-image: url("../Images/cx.jpg");
+}
+
+
+
+
+/* ----footer end---- */

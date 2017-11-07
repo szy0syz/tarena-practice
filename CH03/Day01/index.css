@@ -71,7 +71,7 @@ li.service {
 }
 
 /* 客户服务 */
-li.service > a {
+li.service>a {
     /* 左右内边距模拟元素宽度 */
     padding: 0 15px;
     /* 行内快，高度(26)，行高 */
@@ -84,14 +84,13 @@ li.service > a {
     /* 背景 */
     background: url("../Images/jt_down.jpg") no-repeat 94% center;
 }
-
 /*li.service>a:hover {*/
-/*!* 边框颜色为灰色，背景颜色改白色，更换背景图 *!*/
-/*border-color: #ddd;*/
-/*background-color: #fff;*/
-/*background-image: url("../Images/jt_up.jpg");*/
+    /*!* 边框颜色为灰色，背景颜色改白色，更换背景图 *!*/
+    /*border-color: #ddd;*/
+    /*background-color: #fff;*/
+    /*background-image: url("../Images/jt_up.jpg");*/
 /*}*/
-li.service:hover > a {
+li.service:hover>a{
     /* 边框颜色为灰色，背景颜色改白色，更换背景图 */
     border-color: #ddd;
     background-color: #fff;
@@ -111,7 +110,6 @@ li.service ul {
     /* 默认隐藏 */
     display: none;
 }
-
 /* 客户服务->弹出菜单项目 */
 li.service ul li {
     /* 高度 行高 文字水平居中 */
@@ -119,112 +117,44 @@ li.service ul li {
     line-height: 30px;
     text-align: center;
 }
-
-li.service:hover ul {
+li.service:hover ul{
     display: block;
 }
 
-/* -------------------------------------------------- */
 
-/* 2. top_main 开始~~~~~~~ */
 
-#top_main {
-    height: 80px;
-    position: relative;
-}
 
-#top_main > a {
-    position: relative;
-    top: 7px;
-}
-
-#search_box {
-    /* 左浮动，宽度，左右外边距 */
-    float: left;
-    width: 500px;
-    margin-left: 40px;
-    margin-right: 80px;
-    position: relative;
-    top: 18px;
-}
-
-#search_box div.search {
-    /* 充当搜索栏背景那一横条 */
-    /* 宽度，高度，背景颜色 */
-    width: 100%; /*可省略*/
-    height: 32px;
-    background-color: #E4393C; /*#E4393C号称"京东红"*/
-    /* 边框或内边距 */
-    /*border: 3px solid #E4393C;*/
-    padding: 3px;
+/* ----footer start---- */
+.mod_copyright_links{
 
 }
 
-#search_box input.search_inp {
-    /* 宽度，高度，取消边框，奇效轮廓，改变框模型 */
-    width: 420px;
-    height: 26px;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
+.mod_copyright_info{
+
 }
 
-#search_box .search_btn {
-    /* 宽度，高度，取消边框，背景颜色，文字：大小，颜色，加粗 */
-    height: 26px;
-    width: 70px;
-    background-color: #E4393C;
-    border: 0;
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
+.mod_copyright_auth{
+    height: 40px;
 }
 
-.search_hot_items li {
-    float: left;
-    margin-top: 4px;
-    margin-right: 8px;
+.mod_copyright_auth_ico{
+    width: 108px;
+    height: 40px;
+}
+.mod_copyright_auth_ico_1{
+    background-image: url("../Images/jy.jpg");
+}
+.mod_copyright_auth_ico_2{
+    background-image: url("../Images/kx.jpg");
+}
+.mod_copyright_auth_ico_3{
+    background-image: url("../Images/cy.jpg");
+}
+.mod_copyright_auth_ico_4{
+    background-image: url("../Images/cx.jpg");
 }
 
-div#top_main:after {
-    clear: both;
-}
 
-.top_box {
-    height: 30px;
-    width: 80px;
-    border: 1px solid #666;
-    line-height: 30px;
-    text-align: center;
-    position: relative;
-    top: 20px;
-}
 
-/* 我的京东 */
-.my_jd {
-    margin-right: 12px;
-}
 
-.my_jd>a {
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    width: 80px;
-    background: url("../Images/jd.jpg") no-repeat center center;
-    background-size: contain;
-}
-
-/* 我的购物车 */
-.my_cart {
-    width: 90px;
-    margin-right: 100px;
-}
-
-.my_cart > a {
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    width: 90px;
-    background: url("../Images/gwc.jpg") no-repeat center;
-    background-size: contain;
-}
+/* ----footer end---- */

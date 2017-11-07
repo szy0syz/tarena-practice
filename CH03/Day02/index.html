@@ -61,8 +61,38 @@
 </header>
 
 <!-- 2. LOGO和搜索框 -->
-<div id="top_main">
-    Logo和搜索框
+<div id="top_main"> <!--这里如果给其所有子元素都设为浮动后，它自己内容为空，则下面能浮多少上来就上来多少元素了！-->
+    <!--(1)LOGO-->
+    <a href="#" class="lf" >
+        <img src="../Images/logo-201305.png" alt="logo">
+    </a>
+    <!--(2)搜索框和热门搜索-->
+    <div id="search_box">
+        <!--上：搜索框和按钮-->
+        <div class="search">
+            <input type="text" title="search_inp" class="search_inp">
+            <button type="button" class="search_btn">搜索</button>
+        </div>
+        <!--下：热门搜索-->
+        <ul class="search_hot_items">
+            <li>热门搜索 : </li>
+            <li><a href="#">家纺11月大促</a></li>
+            <li><a href="#">彩虹电热毯</a></li>
+            <li><a href="#">博洋家纺</a></li>
+            <li><a href="#">霞珍</a></li>
+            <li><a href="#">床垫床褥</a></li>
+            <li><a href="#">九州鹿被子</a></li>
+            <li><a href="#">南极人家纺</a></li>
+        </ul>
+    </div>
+    <!--(3)我的京东-->
+    <div class="top_box my_cart rf">
+        <a href="#"></a>
+    </div>
+    <!--(4)去购物车结算-->
+    <div class="top_box my_jd rf">
+        <a href="#"></a>
+    </div>
 </div>
 
 <!-- 3. 页面主导航 -->
@@ -87,7 +117,56 @@
 
 <!-- 7. 页面底部-备案号等 -->
 <footer id="footer">
-    页面底部-备案号等
+    <p class="mod_copyright_links">
+        <a href="#">关于我们</a>
+        <a href="#">联系我们</a>
+        <a href="#">人才招聘</a>
+        <a href="#">商家入驻</a>
+        <a href="#">广告服务</a>
+        <a href="#">手机京东</a>
+        <a href="#">友情链接</a>
+        <a href="#">销售联盟</a>
+        <a href="#">京东社区</a>
+        <a href="#">京东公益</a>
+    </p>
+    <div class="mod_copyright_info">
+        <p>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000088" target="_blank">京公网安备 11000002000088号</a>
+            <span class="mod_copyright_split">|</span>
+            <span>京ICP证070359号</span>
+            <span class="mod_copyright_split">|</span>
+            <a href="//img14.360buyimg.com/da/jfs/t256/349/769670066/270505/3b03e0bb/53f16c24N7c04d9e9.jpg" target="_blank">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+            <span class="mod_copyright_split">|</span>
+            <span>新出发京零&nbsp;字第大120007号</span>
+        </p>
+        <p>
+            <span>互联网出版许可证编号新出网证(京)字150号</span>
+            <span class="mod_copyright_split">|</span>
+            <a href="//sale.jd.com/act/pQua7zovWdJfcIn.html" target="_blank">出版物经营许可证</a>
+            <span class="mod_copyright_split">|</span>
+            <a href="//misc.360buyimg.com/wz/wlwhjyxkz.jpg" target="_blank">网络文化经营许可证京网文[2014]2148-348号</a>
+            <span class="mod_copyright_split">|</span>
+            <span>违法和不良信息举报电话：4006561155</span>
+        </p>
+        <p>
+            <span>Copyright&nbsp;©&nbsp;2004&nbsp;-&nbsp;2017&nbsp;&nbsp;京东JD.com&nbsp;版权所有</span>
+            <span class="mod_copyright_split">|</span>
+            <span>消费者维权热线：4006067733</span>
+            <a href="//sale.jd.com/act/7Y0Rp81MwQqc.html" target="_blank" class="mod_copyright_license">经营证照</a>
+        </p>
+        <p>
+            <span>京东旗下网站：</span>
+            <a href="https://www.jdpay.com/" target="_blank">京东支付</a>
+            <span class="mod_copyright_split">|</span>
+            <a href="http://www.jcloud.com " target="_blank">京东云</a>
+        </p>
+    </div>
+    <p class="mod_copyright_auth">
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_1" href="#"></a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_2" href="#"></a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href="#"></a>
+        <a class="mod_copyright_auth_ico mod_copyright_auth_ico_4" href="#"></a>
+    </p>
 </footer>
 
 </body>

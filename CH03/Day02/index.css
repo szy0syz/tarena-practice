@@ -180,10 +180,16 @@ li.service:hover ul {
     font-weight: bold;
 }
 
-.search_hot_items li {
-    float: left;
-    margin-top: 4px;
-    margin-right: 8px;
+#search_box div.search_hot{
+    margin-top: 5px;
+    color: #999;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+.search_hot a{
+    color: #999;
 }
 
 div#top_main:after {

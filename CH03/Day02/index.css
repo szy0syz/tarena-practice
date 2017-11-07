@@ -180,7 +180,7 @@ li.service:hover ul {
     font-weight: bold;
 }
 
-#search_box div.search_hot{
+#search_box div.search_hot {
     margin-top: 5px;
     color: #999;
     height: 16px;
@@ -188,7 +188,7 @@ li.service:hover ul {
     overflow: hidden;
 }
 
-.search_hot a{
+.search_hot a {
     color: #999;
 }
 
@@ -208,16 +208,33 @@ div#top_main:after {
 
 /* 我的京东 */
 .my_jd {
-    margin-right: 12px;
+    /* 左浮动，边框，背景 */
+    float: left;
+    border: 1px solid #efefef;
+    /* 左内边距，高度，行高，背景图像 */
+    padding-left: 30px;
+    padding-right: 2px;
+    height: 28px;
+    line-height: 28px;
+    background: #f7f7f7 url("../Images/iconlist_2.png") no-repeat -116px -25px;
+    /*设置宽度，以便能够上倒三角显示在其中*/
+    /* 按6个汉字算12*6=72px*/
+    width: 92px;
+    /* 相对定位，为了轻微移动倒三角*/
+    position: relative;
 }
 
-.my_jd>a {
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    width: 80px;
-    background: url("../Images/jd.jpg") no-repeat center center;
-    background-size: contain;
+.my_jd>a{
+    margin-left: -4px;
+}
+
+.my_jd b.jt {
+    width: 8px;
+    height: 4px;
+    display: inline-block;
+    background: url("../Images/jt_down.jpg") no-repeat center center;
+    position: relative;
+    top: -2px;
 }
 
 /* 我的购物车 */
@@ -235,57 +252,57 @@ div#top_main:after {
     background-size: contain;
 }
 
-
-
-
 /* ----footer start---- */
-#footer{
+#footer {
     background-color: #f7f7f7;
     padding: 15px 0;
 }
 
-.mod_copyright_split{
+.mod_copyright_split {
     margin: 0 10px;
     color: #ccc;
 }
 
-.mod_copyright_links{
+.mod_copyright_links {
     text-align: center;
 }
 
-.mod_copyright_info{
+.mod_copyright_info {
     padding: 10px 0;
     text-align: center;
 }
 
-.mod_copyright_auth{
+.mod_copyright_auth {
     text-align: center;
 }
 
-.mod_copyright_auth_ico{
+.mod_copyright_auth_ico {
     /* 宽度，高度，行内块元素 */
     /* 因为a们为行内块元素所以得先修改为行内块后才允许修改宽高 */
     width: 108px;
     height: 40px;
     display: inline-block;
 }
-.mod_copyright_auth_ico_1{
+
+.mod_copyright_auth_ico_1 {
     background-image: url("../Images/jy.jpg");
 }
-.mod_copyright_auth_ico_2{
+
+.mod_copyright_auth_ico_2 {
     background-image: url("../Images/kx.jpg");
 }
-.mod_copyright_auth_ico_3{
+
+.mod_copyright_auth_ico_3 {
     background-image: url("../Images/cy.jpg");
 }
-.mod_copyright_auth_ico_4{
+
+.mod_copyright_auth_ico_4 {
     width: 112px;
     background-image: url("../Images/cx.jpg");
 }
 
-.mod_copyright_info p{
+.mod_copyright_info p {
     padding: 3px 0;
 }
-
 
 /* ----footer end---- */

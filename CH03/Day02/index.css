@@ -1,5 +1,5 @@
 /* 测试样式 */
-#top_main, #nav, #banner, #main, #foot_box, #footer {
+#top_main, #nav, #banner, #main, #foot_box {
     border: 1px solid #000;
 }
 
@@ -277,7 +277,9 @@ div#top_main:after {
     background-image: url("../Images/cx.jpg");
 }
 
-
+.mod_copyright_info p{
+    padding: 3px 0;
+}
 
 
 /* ----footer end---- */

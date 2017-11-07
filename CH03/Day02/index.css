@@ -1,5 +1,5 @@
 /* 测试样式 */
-#top_main, #nav, #banner, #main, #foot_box {
+#nav, #banner, #main, #foot_box {
     border: 1px solid #000;
 }
 
@@ -122,6 +122,7 @@ li.service ul li {
 
 li.service:hover ul {
     display: block;
+    z-index: 10;
 }
 
 /* -------------------------------------------------- */
@@ -223,33 +224,53 @@ div#top_main:after {
     /* 相对定位，为了轻微移动倒三角*/
     position: relative;
 }
-
 .my_jd>a{
     margin-left: -4px;
 }
-
 .my_jd b.jt {
     width: 8px;
     height: 4px;
     display: inline-block;
     background: url("../Images/jt_down.jpg") no-repeat center center;
+    /* 相对定位，将倒三角吸到顶上2px */
     position: relative;
     top: -2px;
 }
-
-/* 我的购物车 */
-.my_cart {
-    width: 90px;
-    margin-right: 100px;
+.my_jd:hover{
+    background-position: -116px -55px;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-.my_cart > a {
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    width: 90px;
-    background: url("../Images/gwc.jpg") no-repeat center;
-    background-size: contain;
+/* 我的购物车 */
+#my_cart {
+    margin-right: 76px;
+    padding-left: 4px;
+    height: 28px;
+    line-height: 28px;
+    background: #f7f7f7 url("../Images/iconlist_2.png") no-repeat -116px -85px;
+    width: 120px;
+    border: 1px solid #efefef;
+}
+#my_cart .ci-count{
+    /* 绝对定位，上偏移，左右偏移， 行内快， 内边距 字体缩小点，行高，颜色，背景色，圆角，最小宽度，文字水平居中*/
+    position: absolute;
+    top: 2px;
+    left: 96px;
+    right:auto;
+    padding: 1px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;
+    background-color: #f10215;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    min-width: 12px;
+    text-align: center;
+
+}
+#my_cart > a {
+    text-align: left;
 }
 
 /* ----footer start---- */

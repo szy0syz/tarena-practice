@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #links a{
+            /* 行内快(为了设宽高)，宽度，边框，背景色 */
+            display: inline-block;
+            width: 100px;
+            border: 1px solid #000000;
+            background-color: #cccccc;
+            text-align: center;
+        }
+
+        #content{
+            /*宽度，高度，内边距，边框，上外边距*/
+            width: 350px;
+            height: 350px;
+            padding: 15px;
+            border:  1px solid #666666;
+            margin-top: 20px;
+        }
+
+        #content img{
+            /*默认图片隐藏*/
+            display: none;
+        }
+
+        #content img:target{
+            /*原来如此，目标伪类最终还是选择到的是元素，而在a的href中已经将目标元素跳转到了当前img上，
+            所以这个选择器最终选择到的还是img啊，所以显示img就有有显示图片！*/
+            display:block;
+        }
+
+        #content #img1:target{
+            transform: scale(1.2);
+        }
+
+        #content #img2:target{
+            transform: scale(0.4);
+        }
+
+        #content #img3:target{
+            transform: rotate(45deg);
+        }
+
+        #content #img4:target{
+            transform: rotate(-45deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="links">
+        <a href="#img1">放大</a>
+        <a href="#img2">缩小</a>
+        <a href="#img3">右旋转</a>
+        <a href="#img4">左旋转</a>
+    </div>
+    <div id="content">
+        <img src="../01_images_toggle/Images/p001.jpg" alt id="img1">
+        <img src="../01_images_toggle/Images/p002.jpg" alt id="img2">
+        <img src="../01_images_toggle/Images/p003.jpg" alt id="img3">
+        <img src="../01_images_toggle/Images/p004.jpg" alt id="img4">
+    </div>
+</div>
+</body>

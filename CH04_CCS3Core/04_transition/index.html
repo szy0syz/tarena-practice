@@ -8,8 +8,7 @@
             width: 300px;
             height: 300px;
             position: absolute;
-            top: 200px;
-            left: 200px;
+            top: 58px;
             background-color: burlywood;
             border: 1px solid #000000;
             text-align: center;
@@ -22,17 +21,36 @@
             /*过渡四要素之三(非必须)：过渡速率*/
             transition-timing-function: linear;
             /*过渡四要素之四(非必须)：过渡延迟*/
-            transition-delay: 0s;
+            transition-delay: 10ms;
         }
 
         #box:hover{
             border-radius: 50%;
+        }
+
+        #ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #E4393C;
+            line-height: 50px;
+            text-align: center;
+            /*过渡(简写方式)：property duration*/
+            transition: transform 1800ms;
+        }
+        #ball:hover{
+            /*启动2d转换*/
+            transform: translate(255px) rotatez(720deg);
+
         }
     </style>
 </head>
 <body>
 <div id="box">
     box
+</div>
+<div id="ball">
+    滚
 </div>
 </body>
 </html>

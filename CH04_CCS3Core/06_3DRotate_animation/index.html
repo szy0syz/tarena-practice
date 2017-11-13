@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #stage {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            margin-top: 150px;
+            border: 1px solid #000;
+
+            /*好比舞台：设置人眼到舞台的距离*/
+            /*perspective  模拟 人眼 到 3D变换物体 之间的距离*/
+            perspective: 1200px;
+            -webkit-perspective: 1200px;
+        }
+
+        #parent {
+            width: 600px;
+            height: 400px;
+            /*旋转框 保留子元素的3D位置*/
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            /*相对定位，为了子元素们*/
+            position: relative;
+            /*主显示面，要前线倾斜，即沿x轴旋转-20deg*/
+            transform: rotateX(-20deg) rotateY(0deg);
+            -webkit-transform: rotateX(-20deg) rotateY(0deg);
+            border: 1px solid sienna;
+        }
+
+        #parent div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 150px;
+            left: 250px;
+        }
+
+        #parent div:nth-child(1) {
+            /*第一个方块向前走200px*/
+            transform: translatez(200px);
+            background-color: yellow;
+        }
+
+        #parent div:nth-child(2) {
+            /*第二个方块先旋转60度再向前走200px*/
+            transform: rotateY(60deg) translateZ(200px);
+            background-color: blue;
+        }
+
+        #parent div:nth-child(3) {
+            /*第二个方块先旋转60度再向前走200px*/
+            transform: rotateY(120deg) translateZ(200px);
+            background-color: pink;
+        }
+
+        #parent div:nth-child(4) {
+            /*第二个方块先旋转60度再向前走200px*/
+            transform: rotateY(180deg) translateZ(200px);
+            background-color: purple;
+        }
+
+        #parent div:nth-child(5) {
+            /*第二个方块先旋转60度再向前走200px*/
+            transform: rotateY(240deg) translateZ(200px);
+            background-color: green;
+        }
+
+        #parent div:nth-child(6) {
+            /*第二个方块先旋转60度再向前走200px*/
+            transform: rotateY(300deg) translateZ(200px);
+            background-color: red;
+        }
+
+        @keyframes change {
+            0% {
+                transform: rotateX(-20deg) rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateX(-20deg) rotateY(360deg);
+            }
+        }
+
+        #stage #parent {
+            animation: change 4s linear 0s infinite;
+        }
+
+        #stage #parent:hover {
+            animation-play-state: paused;
+            -webkit-animation-play-state: paused;
+        }
+
+    </style>
+</head>
+<body>
+<div id="stage">
+    <div id="parent">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 640px;
+    height: 480px;
+    margin: 100px auto 0 auto;
+    padding: 1.5em;
+    border: 1px solid #cccccc;
+}
+
+/*所有类，但不要集合最后一个元素*/
+.form-group:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+/* control-label: 控件标签 */
+.control-label {
+    /*行内块(为了设置宽度后右对齐)，宽度，右对齐，垂直对齐*/
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/* form-control: 表单控件 */
+.form-control {
+    /*内边距，边框，边框倒角，宽度，垂直居中*/
+    padding: 4px;
+    width: 200px;
+    border: 1px solid #aaaaaa;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+/* help-block: 帮助块 */
+.help-block {
+    /* 字体(当前(父)元素字体的80%) 内边距 边框(透明占位)，边框圆角*/
+    font-size: 0.8em;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-left: 8px;
+}
+
+.primary {
+    background: #bbb;
+    border-color: #aaa;
+}
+
+.danger {
+    background: #d22;
+    border-color: #a00;
+}
+
+.success {
+    background: #2b2;
+    border-color: #0a0;
+}

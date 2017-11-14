@@ -7,15 +7,15 @@
 </head>
 <body>
 <div class="container">
-    <form action >
+    <form action>
         <!--注意要用HTML5标准书写方式-->
         <div class="form-group">
             <label for="username" class="control-label">用户名：</label>
-            <input type="text" id="username" class="form-control">
+            <input type="text" id="username" class="form-control" required minlength="3" maxlength="6">
             <span class="help-block primary">用户名重复</span>
         </div>
         <div class="form-group">
-            <label for="password" class="control-label">密  码：</label>
+            <label for="password" class="control-label">密 码：</label>
             <input type="text" id="password" class="form-control">
             <span class="help-block danger">密码长度需要超过8位</span>
         </div>
@@ -24,7 +24,36 @@
             <input type="text" id="vcode" class="form-control">
             <span class="help-block success">验证码错误</span>
         </div>
+        <div class="form-group">
+            <input type="submit" value="提交">
+        </div>
     </form>
 </div>
+<script>
+  /*用户名的验证：必填 最小长度3 最大长度6*/
+  username.onblur = function () {
+    var validity = this.validity, msg = '';
+    if (validity.valueMissing) {
+      msg = '用户名不能为空';
+      this.nextElementSibling.innerHTML = msg;
+      this.nextElementSibling.className = 'help-block danger';
+      this.setCustomValidity(msg);
+    } else if (validity.tooShort) {
+      msg = '用户名不能短于3位';
+      this.nextElementSibling.innerHTML = msg;
+      this.nextElementSibling.className = 'help-block danger';
+      this.setCustomValidity(msg);
+    } else if (validity.tooLong) {
+      msg = '用户名不能超过6位';
+      this.nextElementSibling.innerHTML = msg;
+      this.nextElementSibling.className = 'help-block danger';
+      this.setCustomValidity(msg);
+    } else {
+      msg = '用户名验证成功';
+      this.nextElementSibling.innerHTML = msg;
+      this.nextElementSibling.className = 'help-block success';
+    }
+  }
+</script>
 </body>
 </html>

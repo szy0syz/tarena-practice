@@ -4,23 +4,68 @@
     <meta charset="UTF-8">
     <title>小牛电动车 M1</title>
     <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        video{
+            object-fit: contain;
+        }
+
+        .summary-head {
+            position: relative;
+            height: 805px;
+            text-align: center;
+            background-color: #808080;
+            overflow: hidden;
+        }
+
+        .summary-head video{
+            margin: 0 auto;
+        }
+
+        .cover {
+            z-index: 1;
+            position: absolute;
+            left: 0;
+            height: 805px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .marks {
+            display: none;
+        }
+
+        .fullVideo {
+            font-size: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="summary-head">
-            <div class="cover"></div>
-            <div class="abs-text">
-                <h1 class="niu-font">
-                    科&nbsp;&nbsp;技&nbsp;&nbsp;玩&nbsp;&nbsp;转&nbsp;&nbsp;城&nbsp;&nbsp;市
-                </h1>
-                <p class="play-btn J_play">
-                    观看 M1 产品视频
-                </p>
-            </div>
-            <p class="marks">*全新M1上线，产品实物可能与部分宣传视频或图片有细微差别，请以实物为准。</p>
-        </div>
+
+<div class="summary-head">
+    <div class="cover"></div>
+    <div class="abs-text">
+        <h1 class="niu-font">
+            科&nbsp;&nbsp;技&nbsp;&nbsp;玩&nbsp;&nbsp;转&nbsp;&nbsp;城&nbsp;&nbsp;市
+        </h1>
+        <p class="play-btn J_play">
+            观看 M1 产品视频
+        </p>
     </div>
+    <p class="marks">*全新M1上线，产品实物可能与部分宣传视频或图片有细微差别，请以实物为准。</p>
+    <video class="fullVideo" autoplay loop poster="res/poster.png" style="width: 1950px; margin-top: -133.281px">
+        <source src="res/s-2v.mp4">
+        <source src="res/s-2v.webm">
+    </video>
+</div>
+
 </body>
 </html>

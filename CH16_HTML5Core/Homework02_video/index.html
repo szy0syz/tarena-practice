@@ -25,12 +25,26 @@
             margin: 0 auto;
         }
 
+        .summary-head h1{
+            font-size: 43px;
+            color: #f7f7f7;
+        }
+
+        .summary-head .play-btn{
+            font-size: 24px;
+            line-height: 24px;
+            height: 44px;
+            color: #df001f;
+            cursor: pointer;
+        }
+
         .abs-text{
-            z-index: 10;
+            position: absolute;
+            z-index: 99;
         }
 
         .cover {
-            z-index: 1;
+            z-index: -2;
             position: absolute;
             left: 0;
             height: 805px;
@@ -39,17 +53,23 @@
         }
 
         .marks {
-            display: none;
+            position: absolute;
+            font-size: 12px;
+            color: #ccc;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            bottom: 10px;
+            margin: 0;
         }
 
         .fullVideo {
+            position: relative;
             font-size: 100%;
             margin: 0;
             padding: 0;
             border: 0;
             vertical-align: baseline;
-            z-index: 1;
-
         }
 
     </style>
@@ -67,7 +87,7 @@
         </p>
     </div>
     <p class="marks">*全新M1上线，产品实物可能与部分宣传视频或图片有细微差别，请以实物为准。</p>
-    <video class="fullVideo" autoplay poster="res/poster.png" style="width: 1905px; margin-top: -280px">
+    <video class="fullVideo" autoplay loop poster="res/poster.png" style="width: 100%; margin-top: -133px">
         <source src="res/s-2v.mp4">
         <source src="res/s-2v.webm">
     </video>

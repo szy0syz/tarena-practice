@@ -40,7 +40,14 @@
 
         .abs-text{
             position: absolute;
-            z-index: 99;
+            z-index: 10;
+            width: 460px;
+            top: 255px;
+            left: 50%;
+            margin-left: -230px;
+            background: url("res/M1.png") no-repeat;
+            background-position: 43px top;
+            padding-top: 188px;
         }
 
         .cover {
@@ -87,11 +94,17 @@
         </p>
     </div>
     <p class="marks">*全新M1上线，产品实物可能与部分宣传视频或图片有细微差别，请以实物为准。</p>
-    <video class="fullVideo" autoplay loop poster="res/poster.png" style="width: 100%; margin-top: -133px">
+    <video id="v1" data-hei="805" class="fullVideo" autoplay loop poster="res/poster.png" style="width: 100%; margin-top: -133.281px">
         <source src="res/s-2v.mp4">
         <source src="res/s-2v.webm">
     </video>
 </div>
+<script type="text/javascript">
+    window.onload = function () {
+        // 根据document.documentElement.clientWidth || document.body.clientWidth 取当前浏览器最大宽度来计算
+        // 当缩小到一定时，用data-hei的只当最video高度
 
+    }
+</script>
 </body>
 </html>

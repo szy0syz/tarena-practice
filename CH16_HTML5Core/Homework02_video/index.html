@@ -9,7 +9,7 @@
             padding: 0;
         }
 
-        video{
+        video {
             object-fit: contain;
         }
 
@@ -21,16 +21,16 @@
             overflow: hidden;
         }
 
-        .summary-head video{
+        .summary-head video {
             margin: 0 auto;
         }
 
-        .summary-head h1{
+        .summary-head h1 {
             font-size: 43px;
             color: #f7f7f7;
         }
 
-        .summary-head .play-btn{
+        .summary-head .play-btn {
             font-size: 24px;
             line-height: 24px;
             height: 44px;
@@ -38,7 +38,7 @@
             cursor: pointer;
         }
 
-        .abs-text{
+        .abs-text {
             position: absolute;
             z-index: 10;
             width: 460px;
@@ -78,7 +78,6 @@
             border: 0;
             vertical-align: baseline;
         }
-
     </style>
 </head>
 <body>
@@ -94,17 +93,27 @@
         </p>
     </div>
     <p class="marks">*全新M1上线，产品实物可能与部分宣传视频或图片有细微差别，请以实物为准。</p>
-    <video id="v1" data-hei="805" class="fullVideo" autoplay loop poster="res/poster.png" style="width: 100%; margin-top: -133.281px">
+    <video id="v1" data-hei="805" class="fullVideo" autoplay loop poster="res/poster.png"
+           style="width: 100%; margin-top: -133.281px">
         <source src="res/s-2v.mp4">
         <source src="res/s-2v.webm">
     </video>
 </div>
 <script type="text/javascript">
-    window.onload = function () {
-        // 根据document.documentElement.clientWidth || document.body.clientWidth 取当前浏览器最大宽度来计算
-        // 当缩小到一定时，用data-hei的只当最video高度
+  window.onload = function () {
+    // 根据document.documentElement.clientWidth || document.body.clientWidth 取当前浏览器最大宽度来计算
+    // 当缩小到一定时，用data-hei的只当最video高度
+
+  };
+
+  window.onresize = function () {
+    var w = document.documentElement.clientWidth || document.body.clientWidth;
+    if (w <= 1666) {
+      v1.style.marginTop = parseFloat(v1.style.marginTop) + 1 + 'px';
 
     }
+
+  }
 </script>
 </body>
 </html>

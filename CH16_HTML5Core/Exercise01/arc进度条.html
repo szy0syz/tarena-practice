@@ -8,36 +8,61 @@
             margin: 0;
         }
 
-        #cc {
+        .container {
+            position: relative;
+            width: 600px;
+            height: 400px;
             display: block;
             margin: 60px auto 0 auto;
             border: 1px solid #cccccc;
             background-color: #f0f0f0;
         }
+
+        #per {
+            position: absolute;
+            top: 187px;
+            left: 288px;
+            margin: 0;
+            color: red;
+        }
+
     </style>
 </head>
 <body>
-<canvas id="cc" width="600" height="400"></canvas>
+
+<div class="container">
+    <h3 id="per"></h3>
+    <canvas id="cc" width="600" height="400"></canvas>
+</div>
+
 <script type="text/javascript">
   var ctx = cc.getContext('2d');
-  ctx.beginPath();
-  ctx.lineWidth = 10;
+
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = "darkgray";
   var x = 300, y = 200, r = 100, startAgnle = -Math.PI / 2,
-    step = 3 * Math.PI / 200;
+    step = Math.PI / 50, count = 0;
+  ctx.beginPath();
+  ctx.arc(x, y, r, startAgnle, 3 / 2 * Math.PI);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.strokeStyle = "red";
 
   function draw() {
     var endAngle = startAgnle + step;
     ctx.arc(x, y, r, startAgnle, endAngle);
     startAgnle = endAngle;
     ctx.stroke();
-    if(startAgnle >= 3*Math.PI/2) {
+    per.innerHTML = ++count;
+    if (startAgnle >= 3 * Math.PI / 2) {
       window.clearTimeout(timer);
+      ctx.closePath();
     }
   }
-  
+
   var timer = setInterval(function () {
     draw(startAgnle, step);
-  }, 50);
+  }, 60);
 </script>
 </body>
 </html>

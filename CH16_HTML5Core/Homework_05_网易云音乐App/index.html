@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
     <title>Title</title>
     <style>
         body {
@@ -10,14 +11,37 @@
 
         .container {
             /* DPR:2.0 */
-            width: 640px;
-            height: 1136px;
+            /*width: 640px;*/
+            /*height: 1136px;*/
+            width: 320px;
+            height: 568px;
             position: relative;
+        }
+
+        .m-song-bg{
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            -webkit-transform: scale(3.5);
+            /* 放大1.5倍 */
+            transform: scale(3.5);
+            position: fixed;
+            left: 0;
+            right: 0;
+            top:0;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            transition: opacity .3s linear;
+        }
+
+        .m-song-wrap{
+            width: 320px;
+            height: 311px;
         }
 
         .m-song_newfst {
             width: 100%;
-
         }
 
         .m-logo {
@@ -31,15 +55,54 @@
             background: url("res/logo.png") no-repeat;
             background-size: 100px auto; /* 背景图片的尺寸 */
         }
+
+        .m-song_wrap{
+            padding-top: 63px;
+        }
+
+        .m-song_wrap .m-song-disc{
+            width: 248px;
+            height: 248px;
+            margin: 0 auto;
+        }
+
+        #c_disc{
+            background: url("res/disc.png") no-repeat;
+            background-size: contain;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="m-song_newfst">
-        <!-- logo -->
-        <span class="m-logo"></span>
+    <div class="m-newsong">
+        <div class="m-song-bg" style="background-image: url('res/song_background.jpg'); opacity: 1;"></div>
+        <div class="m-song-wrap">
+            <div class="m-song_newfst">
+                <!-- logo -->
+                <span class="m-logo"></span>
+                <!--disc-->
+                <div class="m-song_wrap">
+                    <div class="m-song-disc">
+                        <canvas id="c_disc" width="248" height="248"></canvas>
+                    </div>
+                    <div class="m-song-clickarea"></div>
+                </div>
+                <!--歌名+歌词-->
+                <div class="m-song_info"></div>
+            </div>
+            <div class="m-song_newcomm"></div>
+        </div>
+        <div class="footer"></div>
     </div>
-    <div class="m-song_newcomm"></div>
 </div>
+<script>
+
+    var ctx = c_disc.getContext('2d')
+
+
+
+    }
+</script>
 </body>
 </html>

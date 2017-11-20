@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
     <title>Title</title>
     <style>
         body {
@@ -18,7 +19,7 @@
             position: relative;
         }
 
-        .m-song-bg{
+        .m-song-bg {
             background-position: 50%;
             background-repeat: no-repeat;
             background-size: auto 100%;
@@ -28,14 +29,14 @@
             position: fixed;
             left: 0;
             right: 0;
-            top:0;
+            top: 0;
             height: 100%;
             overflow: hidden;
             z-index: -1;
             transition: opacity .3s linear;
         }
 
-        .m-song-wrap{
+        .m-song-wrap {
             width: 320px;
             height: 311px;
         }
@@ -56,19 +57,19 @@
             background-size: 100px auto; /* 背景图片的尺寸 */
         }
 
-        .m-song_wrap{
+        .m-song_wrap {
             padding-top: 63px;
         }
 
-        .m-song_wrap .m-song-disc{
+        .m-song_wrap .m-song-disc {
             width: 248px;
             height: 248px;
             margin: 0 auto;
         }
 
-        #c_disc{
-            background: url("res/disc.png") no-repeat;
-            background-size: contain;
+        #c_disc {
+            /*background: url("res/disc.png") no-repeat;*/
+            /*background-size: contain;*/
         }
 
     </style>
@@ -97,12 +98,23 @@
     </div>
 </div>
 <script>
+  var ctx = c_disc.getContext('2d');
+  var img = new Image(248, 248);
+  var poster = new Image();
+  img.src = "res/disc.png";
+  poster.src = "res/song_poster.jpeg";
+  img.onload = function () {
+    ctx.save();
+    ctx.scale(5 / 12, 5 / 12);
+    ctx.drawImage(poster, 49 / (5 / 12), 49 / (5 / 12));
+    // 恢复画笔大小
+    ctx.restore();
+    ctx.save();
+    ctx.scale(.5, .5);
+    ctx.drawImage(img, 0, 0);
 
-    var ctx = c_disc.getContext('2d')
+  };
 
-
-
-    }
 </script>
 </body>
 </html>

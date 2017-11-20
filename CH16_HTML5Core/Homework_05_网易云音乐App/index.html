@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            /* DPR:2.0 */
+            width: 640px;
+            height: 1136px;
+            position: relative;
+        }
+
+        .m-song_newfst {
+            width: 100%;
+
+        }
+
+        .m-logo {
+            /*  */
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            display: block;
+            width: 100px;
+            height: 17px;
+            background: url("res/logo.png") no-repeat;
+            background-size: 100px auto; /* 背景图片的尺寸 */
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+    <div class="m-song_newfst">
+        <!-- logo -->
+        <span class="m-logo"></span>
+    </div>
+    <div class="m-song_newcomm"></div>
+</div>
 </body>
 </html>

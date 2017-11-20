@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<h2>飞机跟随</h2>
+<canvas id="cc" width="600" height="400"></canvas>
+<script>
+  var ctx = cc.getContext('2d');
+  var img = new Image();
+  img.src = './p3.png';
+  cc.onmousemove = function (e) {
+    // 获取相对偏移量
+    var x = e.offsetX;
+    var y = e.offsetY;
+    // 有了偏移量就可以画飞机了
+    ctx.clearRect(0, 0, 600, 400);
+    ctx.drawImage(img, x, y);
+  }
+</script>
+</body>
+</html>

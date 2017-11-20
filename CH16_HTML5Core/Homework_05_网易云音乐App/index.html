@@ -106,15 +106,20 @@
   img.onload = function () {
     ctx.translate(124, 124);
 
-    ctx.save();
-    ctx.scale(5 / 12, 5 / 12);
-//    ctx.drawImage(poster, 49 / (5 / 12) - 128, 49 / (5 / 12)-128 );
-    ctx.drawImage(poster, -180, -180);
-    // 恢复画笔大小
-    ctx.restore();
-    ctx.save();
-    ctx.scale(.5, .5);
-    ctx.drawImage(img, -248, -248);
+    setInterval(function () {
+      ctx.clearRect(-124, -124, 248, 248);
+      ctx.rotate(2 * Math.PI / 180);
+      ctx.save();
+      ctx.scale(5 / 12, 5 / 12);
+      ctx.drawImage(poster, -180, -180);
+      // 恢复画笔大小
+      ctx.restore();
+      ctx.save();
+      ctx.scale(.5, .5);
+      ctx.drawImage(img, -248, -248);
+      ctx.restore();
+    }, 100);
+
 
   };
 

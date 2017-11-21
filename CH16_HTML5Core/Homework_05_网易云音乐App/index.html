@@ -67,6 +67,7 @@
             width: 100%;
             height: 433px;
             padding-bottom: 12px;
+            position: relative;
         }
 
         .m-song_wrap {
@@ -108,6 +109,15 @@
             background-size: contain;
         }
 
+        .m-song-clickarea {
+            z-index: 10;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -124,12 +134,14 @@
                         <canvas id="c_disc" width="248" height="248"></canvas>
                         <span class="m-song_btn"></span>
                     </div>
-                    <div class="m-song-clickarea"></div>
+
                 </div>
                 <!--歌名+歌词-->
                 <div class="m-song_info"></div>
+                <div id="clickarea" class="m-song-clickarea"></div>
             </div>
             <div class="m-song_newcomm"></div>
+
         </div>
         <div class="footer"></div>
     </div>
@@ -166,6 +178,7 @@
       }, 100);
     } else {
       window.clearTimeout(timer);
+      isPlay = false;
     }
   }
 
@@ -174,6 +187,9 @@
     ctx.translate(124, 124);
     toggle();
   };
+
+  var clickArea = document.getElementById('clickarea');
+  clickArea.addEventListener('click', toggle);
 
 </script>
 </body>

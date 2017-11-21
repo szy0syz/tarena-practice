@@ -58,18 +58,18 @@
         }
 
         /*.m-song-wrap {*/
-            /*padding-top: 63px;*/
-            /*width: 320px;*/
-            /*height: 508px;*/
+        /*padding-top: 63px;*/
+        /*width: 320px;*/
+        /*height: 508px;*/
         /*}*/
 
-        .m-song_newfst{
+        .m-song_newfst {
             width: 100%;
             height: 433px;
             padding-bottom: 12px;
         }
 
-        .m-song_wrap{
+        .m-song_wrap {
             padding-top: 63px;
             width: 100%;
         }
@@ -81,7 +81,7 @@
         }
 
         /* 歌词部分 */
-        .m-song_info{
+        .m-song_info {
             width: 250px;
             height: 97px;
             margin-top: 25px;
@@ -91,6 +91,20 @@
         #c_disc {
             /*background: url("res/disc.png") no-repeat;*/
             /*background-size: contain;*/
+        }
+
+        .m-song_btn {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            z-index: 10;
+            top:50%;
+            left: 50%;
+            /*在位置容器内元素垂直居中*/
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-150%,-150%);
+            background: url("res/play.png") 0 0 no-repeat;
+            background-size: contain;
         }
 
     </style>
@@ -107,6 +121,7 @@
                 <div class="m-song_wrap">
                     <div class="m-song-disc">
                         <canvas id="c_disc" width="248" height="248"></canvas>
+                        <span class="m-song_btn"></span>
                     </div>
                     <div class="m-song-clickarea"></div>
                 </div>
@@ -124,21 +139,26 @@
   var poster = new Image();
   img.src = "res/disc.png";
   poster.src = "res/song_poster.jpeg";
+
+  function rotateDisc() {
+    ctx.clearRect(-124, -124, 248, 248);
+    ctx.rotate(2 * Math.PI / 180);
+    ctx.save();
+    ctx.scale(5 / 12, 5 / 12);
+    ctx.drawImage(poster, -180, -180);
+    // 恢复画笔大小
+    ctx.restore();
+    ctx.save();
+    ctx.scale(.5, .5);
+    ctx.drawImage(img, -248, -248);
+    ctx.restore();
+  }
+
   img.onload = function () {
     ctx.translate(124, 124);
 
     setInterval(function () {
-      ctx.clearRect(-124, -124, 248, 248);
-      ctx.rotate(2 * Math.PI / 180);
-      ctx.save();
-      ctx.scale(5 / 12, 5 / 12);
-      ctx.drawImage(poster, -180, -180);
-      // 恢复画笔大小
-      ctx.restore();
-      ctx.save();
-      ctx.scale(.5, .5);
-      ctx.drawImage(img, -248, -248);
-      ctx.restore();
+      rotateDisc();
     }, 100);
 
 

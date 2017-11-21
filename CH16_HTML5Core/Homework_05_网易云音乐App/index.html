@@ -78,6 +78,7 @@
             width: 248px;
             height: 248px;
             margin: 0 auto;
+            position: relative;
         }
 
         /* 歌词部分 */
@@ -98,11 +99,11 @@
             width: 50px;
             height: 50px;
             z-index: 10;
-            top:50%;
+            top: 50%;
             left: 50%;
             /*在位置容器内元素垂直居中*/
-            -webkit-transform: translate(-50%,-50%);
-            transform: translate(-150%,-150%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
             background: url("res/play.png") 0 0 no-repeat;
             background-size: contain;
         }
@@ -137,10 +138,14 @@
   var ctx = c_disc.getContext('2d');
   var img = new Image(248, 248);
   var poster = new Image();
+  var timer = -1, isPlay = false;
   img.src = "res/disc.png";
   poster.src = "res/song_poster.jpeg";
 
   function rotateDisc() {
+    // 状态
+    isPlay = true;
+
     ctx.clearRect(-124, -124, 248, 248);
     ctx.rotate(2 * Math.PI / 180);
     ctx.save();
@@ -154,28 +159,21 @@
     ctx.restore();
   }
 
+  function toggle() {
+    if (isPlay === false) {
+      timer = setInterval(function () {
+        rotateDisc();
+      }, 100);
+    } else {
+      window.clearTimeout(timer);
+    }
+  }
+
   img.onload = function () {
+    // 一来不管啥，先把坐标原点移动到画布正中央(以后我们以这里为原点移动)
     ctx.translate(124, 124);
-
-    setInterval(function () {
-      rotateDisc();
-    }, 100);
-
-
+    toggle();
   };
-
-  //  setInterval(function () {
-  //    ctx.clearRect(-124, -124, 248, 248);
-  //    ctx.rotate(4 * Math.PI / 180);
-  //    ctx.save();
-  //    ctx.scale(5 / 12, 5 / 12);
-  //    ctx.drawImage(poster, 124 - 49 / (5 / 12), 124 - 49 / (5 / 12));
-  //    // 恢复画笔大小
-  //    ctx.restore();
-  //    ctx.save();
-  //    ctx.scale(.5, .5);
-  //    ctx.drawImage(img, 0, 0);
-  //  }, 600)
 
 </script>
 </body>

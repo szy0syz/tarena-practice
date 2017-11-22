@@ -6,7 +6,7 @@
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
     <title>Title</title>
     <style>
-        body, h4 {
+        body, h4, h2, p {
             margin: 0;
             padding: 0;
         }
@@ -77,13 +77,13 @@
             position: relative;
         }
 
-        .m-song_wrap:after{
+        .m-song_wrap:after {
             content: '';
             display: block;
             width: 84px;
             height: 122px;
             position: absolute;
-            top:0;
+            top: 0;
             left: 45%;
             z-index: 5;
             background: url("res/needle.png") no-repeat;
@@ -161,7 +161,7 @@
             display: flex;
         }
 
-        .btn{
+        .btn {
             display: inline-block;
             box-sizing: content-box;
             color: #d33a31;
@@ -173,6 +173,43 @@
             line-height: 38px;
             border-radius: 20px;
             flex: 1 1 auto;
+        }
+
+        .m-song-h2 {
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.1;
+            color: #fefefe;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .m-song-autr{
+            color: hsla(0, 0%, 100%, .6);
+        }
+
+        .m-song-scroll {
+            margin-top: 14px;
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /*普通歌词*/
+        .m-song-lritem {
+            padding-bottom: 5px;
+            color: hsla(0, 0%, 100%, .6);
+        }
+
+        /*当前歌词*/
+        .j-lritem {
+            color: #fefefe;
+        }
+
+        .btn-down{
+            background-color: #d33a31;
+            color: white;
         }
 
     </style>
@@ -194,7 +231,19 @@
 
                 </div>
                 <!--歌名+歌词-->
-                <div class="m-song_info"></div>
+                <div class="m-song_info">
+                    <h2 class="m-song-h2">
+                        <span class="m-song-sname">画 - </span>
+                        <span class="m-song-autr">赵雷</span>
+                    </h2>
+                    <div class="m-song-lrc">
+                        <div class="m-song-scroll">
+                            <p class="m-song-lritem j-lritem">作曲 : 赵雷</p>
+                            <p class="m-song-lritem">为寂寞的夜空画上一个月亮</p>
+                            <p class="m-song-lritem">把我画在那月亮下面歌唱</p>
+                        </div>
+                    </div>
+                </div>
                 <div id="clickarea" class="m-song-clickarea"></div>
             </div>
             <div class="m-song_newcomm">

@@ -229,6 +229,7 @@
                     <div class="m-song-disc">
                         <canvas id="c_disc" width="248" height="248"></canvas>
                         <span class="m-song_btn"></span>
+                        <audio id="myAudio" src="res/hua.mp3" autoplay></audio>
                     </div>
 
                 </div>
@@ -272,7 +273,7 @@
   function rotateDisc() {
     // 状态
     isPlay = true;
-
+    myAudio.play();
     ctx.clearRect(-124, -124, 248, 248);
     ctx.rotate(2 * Math.PI / 180);
     ctx.save();
@@ -294,6 +295,7 @@
     } else {
       window.clearTimeout(timer);
       isPlay = false;
+      myAudio.pause();
     }
   }
 

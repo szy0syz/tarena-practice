@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        svg {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<h3>创建30个随机大小颜色透明度的原形</h3>
+<svg id="mySVG" width="500" height="500"></svg>
+<script type="text/javascript">
+  function randomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + "," + g + "," + b + ")";
+  }
+
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  function randomOpacity() {
+    return Math.random().toFixed(2);
+  }
+
+  var frag = document.createDocumentFragment(), circle = null;
+  for (var i = 0; i < 30; i++) {
+    circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+    circle.setAttribute('r', randomNumber(10, 70));
+    circle.setAttribute('cx', randomNumber(2, 498));
+    circle.setAttribute('cy', randomNumber(2, 498));
+    circle.setAttribute('fill', randomColor());
+    circle.setAttribute('stroke', "#ccc");
+    circle.setAttribute('opacity', randomOpacity());
+    frag.appendChild(circle);
+    circle = null;
+  }
+
+  mySVG.appendChild(frag);
+</script>
+</body>
+</html>

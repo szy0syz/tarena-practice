@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>棋盘2</title>
+    <style>
+        body {
+            text-align: center; /*我儿子是行内块元素，劳资让它水平居中了！*/
+        }
+        svg {
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+<svg id="pan" width="640" height="640"></svg>
+<script type="text/javascript">
+  const svgns = "http://www.w3.org/2000/svg";
+  const svg = document.getElementById("pan");
+  const base = 80, h = 80, w = 80;
+  let i = 0, j = 0, rect = null;
+  let frag = document.createDocumentFragment();
+  for (; i < 8; i++) {
+    let even = i % 2 === 0;
+    for (; j < 4; j++) {
+      rect = document.createElementNS(svgns, 'rect');
+      rect.setAttributeNS(null, 'width', w);
+      rect.setAttributeNS(null, 'height', h);
+      rect.setAttributeNS(null, 'x', even ? j * 2 * base : (j * 2 + 1) * base);
+      rect.setAttributeNS(null, 'y', i * base);
+      frag.appendChild(rect);
+      rect = null;
+    }
+    /*完成一次外循环后重置j为0*/
+    j = 0;
+  }
+  svg.appendChild(frag);
+</script>
+</body>
+</html>

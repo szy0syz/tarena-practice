@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>svg渐变</title>
+    <style>
+        body {
+            text-align: center; /*我儿子是行内块元素，劳资让它水平居中了！*/
+        }
+
+        svg {
+            border: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <svg width="500" height="400">
+        <defs>
+           <linearGradient id="g2" x1="0" y1="0" x2="100%" y2="0">
+               <stop offset="0"    stop-color="red"></stop>
+               <stop offset="17%"  stop-color="orange"></stop>
+               <stop offset="33%"  stop-color="yellow"></stop>
+               <stop offset="50%"  stop-color="green"></stop>
+               <stop offset="67%"  stop-color="cyan"></stop>
+               <stop offset="83%"  stop-color="blue"></stop>
+               <stop offset="100%" stop-color="purple"></stop>
+           </linearGradient>
+        </defs>
+        <rect fill="url(#g2)" x="40" y="40" width="400" height="200"></rect>
+        <text x="50" y="300" font-size="29" stroke="url(#g2)" alignment-baseline="before-edge">云南农业生产资料股份有限公司</text>
+    </svg>
+</body>
+</html>

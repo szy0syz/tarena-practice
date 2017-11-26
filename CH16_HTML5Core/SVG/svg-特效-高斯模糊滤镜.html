@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高斯模糊滤镜</title>
+    <style>
+        body {
+            text-align: center; /*我儿子是行内块元素，劳资让它水平居中了！*/
+        }
+
+        svg {
+            border: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<svg width="600" height="500">
+    <defs>
+        <!--<linearGradient></linearGradient>-->
+        <filter id="f1">
+            <fegaussianblur stdDeviation="3"></fegaussianblur>
+        </filter>
+        <filter id="f2">
+            <fegaussianblur stdDeviation="6"></fegaussianblur>
+        </filter>
+    </defs>
+    <text font-size="50" x="20" y="100">葫芦娃，今天大日子。</text>
+    <text filter="url(#f1)" font-size="50" x="20" y="200">葫芦娃，今天大日子。</text>
+    <text filter="url(#f2)" font-size="50" x="20" y="300">葫芦娃，今天大日子。</text>
+</svg>
+</body>
+</html>

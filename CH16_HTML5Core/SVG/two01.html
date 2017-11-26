@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>twojs01</title>
+    <script src="two.js"></script>
+</head>
+<body>
+<div id="d1"></div>
+<script type="text/javascript">
+  var odiv = document.getElementById('d1');
+  var params = {width: 285, height: 200};
+  var two = new Two(params).appendTo(odiv);
+
+  var circle = two.makeCircle(72, 100, 50);
+  var rect = two.makeRectangle(213, 100, 100, 100);
+
+  circle.fill = '#FF8000';
+  circle.stroke='orangered';
+  circle.linewidth = 5;
+
+  rect.fill = 'rgb(0, 200, 255)';
+  rect.opacity = 0.75;
+  rect.noStroke();
+
+  two.update();
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img style="position: absolute;top: 0;left: 0;" id="plane" src="p3.png" alt="plane">
+</body>
+<script>
+  var elem = document.getElementById('plane');
+  plane.ondragstart = function (e) {
+//    console.log('ondragstart: ', e);
+    this.y = parseFloat(this.style.top);
+    this.x = parseFloat(this.style.left);
+    this.offsetX = e.offsetX;
+    this.offsetY = e.offsetY;
+  };
+
+  plane.ondrag = function (e) {
+//    console.dir(e);
+    if(e.pageX === 0 || e.pageY === 0) return;
+    this.style.left = e.offsetX - this.offsetX + this.x + 'px';
+    this.style.top = e.offsetY - this.offsetY+ this.y  + 'px';
+  };
+
+  plane.ondragend = function (e) {
+//    console.log('dragend: ', e);
+//    this.style.left = e.offsetX - this.offsetX + this.x + 'px';
+//    this.style.top = e.offsetY - this.offsetY+ this.y  + 'px';
+  };
+</script>
+</html>

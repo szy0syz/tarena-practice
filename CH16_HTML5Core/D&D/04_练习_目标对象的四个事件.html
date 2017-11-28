@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
+在垃圾桶上松手也变为半透明！提示：只需要用到目标对象的四个事件-->
+<img style="position: absolute;top: 20px;left: 50px;" id="plane" src="p3.png" alt="plane">
+
+<img src="trash.jpeg" style="position: absolute;top: 300px;left: 300px;z-index: -1" alt="trash" id="trash">
+</body>
+<script>
+  var elem = document.getElementById('plane');
+  plane.ondragstart = function (e) {
+//    console.log('ondragstart: ', e);
+    this.y = parseFloat(this.style.top);
+    this.x = parseFloat(this.style.left);
+    this.offsetX = e.offsetX;
+    this.offsetY = e.offsetY;
+  };
+
+  plane.ondrag = function (e) {
+//    console.dir(e);
+    if (e.pageX === 0 || e.pageY === 0) return;
+    this.style.left = e.offsetX - this.offsetX + this.x + 'px';
+    this.style.top = e.offsetY - this.offsetY + this.y + 'px';
+  };
+
+  plane.ondragend = function (e) {
+    console.log('plane--dragend');
+  };
+
+  trash.ondragenter = function (e) {
+    console.log('dragenter');
+  }
+  trash.ondragover = function (e) {
+    console.log('dragover');
+  }
+  trash.ondragleave = function (e) {
+    console.log('dragleave');
+  }
+  trash.ondrop = function (e) {
+    console.log('drop');
+  }
+</script>
+</html>

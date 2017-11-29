@@ -32,99 +32,107 @@
 
 </body>
 
+<!--<script>-->
+  <!--var dragged;-->
+
+  <!--/* events fired on the draggable target */-->
+  <!--document.addEventListener("drag", function (event) {-->
+
+  <!--}, false);-->
+
+  <!--document.addEventListener("dragstart", function (event) {-->
+    <!--// store a ref. on the dragged elem-->
+    <!--dragged = event.target;-->
+    <!--// make it half transparent-->
+    <!--event.target.style.opacity = .5;-->
+  <!--}, false);-->
+
+  <!--document.addEventListener("dragend", function (event) {-->
+    <!--// reset the transparency-->
+    <!--event.target.style.opacity = "";-->
+  <!--}, false);-->
+
+  <!--/* events fired on the drop targets */-->
+  <!--document.addEventListener("dragover", function (event) {-->
+    <!--// prevent default to allow drop-->
+    <!--event.preventDefault();-->
+  <!--}, false);-->
+
+  <!--document.addEventListener("dragenter", function (event) {-->
+    <!--// highlight potential drop target when the draggable element enters it-->
+    <!--if (event.target.className == "dropzone") {-->
+      <!--event.target.style.background = "purple";-->
+    <!--}-->
+
+  <!--}, false);-->
+
+  <!--document.addEventListener("dragleave", function (event) {-->
+    <!--// reset background of potential drop target when the draggable element leaves it-->
+    <!--if (event.target.className == "dropzone") {-->
+      <!--event.target.style.background = "";-->
+    <!--}-->
+
+  <!--}, false);-->
+
+  <!--document.addEventListener("drop", function (event) {-->
+    <!--// prevent default action (open as link for some elements)-->
+    <!--event.preventDefault();-->
+    <!--// move dragged elem to the selected drop target-->
+    <!--if (event.target.className == "dropzone") {-->
+      <!--event.target.style.background = "";-->
+      <!--dragged.parentNode.removeChild(dragged);-->
+      <!--event.target.appendChild(dragged);-->
+    <!--}-->
+
+  <!--}, false);-->
+<!--</script>-->
+
+
+
+
+
 <script>
   var dragged;
 
-  /* events fired on the draggable target */
-  document.addEventListener("drag", function (event) {
-
+  document.addEventListener("drag", function (e) {
+    //没用
+  }, false);
+  document.addEventListener('dragstart', function (e) {
+    // 全局空间保存 源对象
+    dragged = e.target;
+    e.target.style.opacity = .5;
+  }, false);
+  document.addEventListener('dragend', function (e) {
+    //reset
+    e.target.style.opacity = "";
   }, false);
 
-  document.addEventListener("dragstart", function (event) {
-    // store a ref. on the dragged elem
-    console.dir(event.target);
-    dragged = event.target;
-    // make it half transparent
-    event.target.style.opacity = .5;
-  }, false);
+  /////////////////////
 
-  document.addEventListener("dragend", function (event) {
-    // reset the transparency
-    event.target.style.opacity = "";
-  }, false);
-
-  /* events fired on the drop targets */
-  document.addEventListener("dragover", function (event) {
+  document.addEventListener("dragover", function (e) {
     // prevent default to allow drop
-    event.preventDefault();
+    e.preventDefault();
   }, false);
 
-  document.addEventListener("dragenter", function (event) {
-    // highlight potential drop target when the draggable element enters it
-    if (event.target.className == "dropzone") {
-      event.target.style.background = "purple";
+  document.addEventListener('dragenter', function (e) {
+    if (e.target.id === 'target') {
+      e.target.style.background = "purple";
     }
 
   }, false);
-
-  document.addEventListener("dragleave", function (event) {
-    // reset background of potential drop target when the draggable element leaves it
-    if (event.target.className == "dropzone") {
-      event.target.style.background = "";
+  document.addEventListener('dragleave', function (e) {
+    // 到底是哪个哥哥的离开，我的判断好！
+    if (e.target.id === 'target') {
+      e.target.style.background = "";
     }
-
   }, false);
-
-  document.addEventListener("drop", function (event) {
-    // prevent default action (open as link for some elements)
-    event.preventDefault();
-    // move dragged elem to the selected drop target
-    if (event.target.className == "dropzone") {
-      event.target.style.background = "";
-      dragged.parentNode.removeChild(dragged);
-      event.target.appendChild(dragged);
+  document.addEventListener('drop', function (e) {
+    // 先阻止默认行为
+    e.preventDefault();
+    if (e.target.id === 'target') {
+        dragged.parentNode.removeChild(dragged);
+        e.target.appendChild(dragged);
     }
-
   }, false);
 </script>
-
-<!--<script type="text/javascript">-->
-  <!--var dragged;-->
-
-  <!--document.addEventListener("drag", function (e) {-->
-    <!--//没用-->
-  <!--}, false);-->
-  <!--document.addEventListener('dragstart', function (e) {-->
-    <!--// 全局空间保存 源对象-->
-    <!--dragged = e.target;-->
-<!--//    e.target.style.opacity = .4;-->
-  <!--}, false);-->
-  <!--document.addEventListener('dragend', function (e) {-->
-<!--//    e.target.style.opacity = 1;-->
-  <!--}, false);-->
-
-  <!--/////////////////////-->
-
-  <!--document.addEventListener('dragenter', function (e) {-->
-    <!--if (e.target.id = 'target') {-->
-      <!--console.log('dragenter+++');-->
-<!--//      e.target.style.opacity = .5;-->
-    <!--}-->
-
-  <!--}, false);-->
-  <!--document.addEventListener('dragleave', function (e) {-->
-    <!--// 到底是哪个哥哥的离开，我的判断好！-->
-    <!--if (e.target.id = 'target') {-->
-      <!--e.target.style.opacity = 1;-->
-    <!--}-->
-  <!--}, false);-->
-  <!--document.addEventListener('drop', function (e) {-->
-    <!--// 先阻止默认行为-->
-    <!--e.preventDefault();-->
-    <!--if (e.target.id = 'target') {-->
-<!--//        dragged.parentNode.removeChild(dragged);-->
-<!--//        e.target.appendChild(dragged);-->
-    <!--}-->
-  <!--}, false);-->
-<!--</script>-->
 </html>

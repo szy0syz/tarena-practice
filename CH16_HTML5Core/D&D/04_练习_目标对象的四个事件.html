@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        #source {
+            width: 160px;
+            height: 100px;
+            position: absolute;
+            left: 100px;
+            top: 450px;
+            background-color: red;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
@@ -10,48 +21,93 @@
 <!--<img width="100px" height="50px" style="z-index: 2;position: absolute;top: 20px;left: 50px;" id="plane" src="p3.png" alt="plane">-->
 
 <!--<img src="trash.jpeg" style="opacity: 0.5;position: absolute;top: 300px;left: 300px;" alt="trash" id="trash">-->
-<div id="target" style="background-color: #22bb22;width: 400px;height: 400px;display:inline-block;margin: 0 auto;"></div>
+<div id="target"
+     style="background-color: #22bb22;width: 200px;height: 200px;display:inline-block;margin: 0 auto;"></div>
 
-<div id="source" style="width: 100px;height: 100px;position: absolute;left: 100px;top: 450px;background-color: red;"></div>
+<div id="source" draggable="true"
+     ondragstart="event.dataTransfer.setData('text/plain',null)">
+    This div is draggable
+</div>
 </body>
-<script>
-  var elem = document.getElementById('source');
-  source.draggable = true;
-  target.dropable = true;
-  source.ondragstart = function (e) {
-//    console.log('ondragstart: ', e);
-    this.y = parseFloat(this.style.top);
-    this.x = parseFloat(this.style.left);
-    this.offsetX = e.offsetX;
-    this.offsetY = e.offsetY;
-  };
 
-  source.ondrag = function (e) {
-    if (e.pageX === 0 || e.pageY === 0) {
-      this.style.left = this.style.left;
-      this.style.top = this.style.top;
-      return;
+<script type="text/javascript">
+  var dragged;
+
+  document.addEventListener('drag', function (e) {
+    // 没用的事件，置空。
+  }, false);
+  document.addEventListener('dargstart', function (e) {
+    // 全局空间保存 源对象
+    dragged = e.target;
+    e.target.style.border = '1px solid #ccc';
+  }, false);
+  document.addEventListener('dragend', function (e) {
+    e.target.style.border = '';
+  }, false);
+
+  /////////////////////
+
+  document.addEventListener('dragenter', function (e) {
+    if (e.target.id = 'target') {
+      console.log('dragenter+++');
+      e.target.style.opacity = .5;
     }
-    this.style.left = e.offsetX - this.offsetX + this.x + 'px';
-    this.style.top = e.offsetY - this.offsetY + this.y + 'px';
-  };
 
-  source.ondragend = function (e) {
-    console.dir('ondragend',e);
-  };
-
-  target.ondragenter = function (e) {
-    console.log('dragenter');
-  };
-  target.ondragover = function (e) {
-    console.log('dragover');
+  }, false);
+  document.addEventListener('dragleave', function (e) {
+    // 到底是哪个哥哥的离开，我的判断好！
+    if (e.target.id = 'target') {
+      e.target.style.opacity = "";
+    }
+  }, false);
+  document.addEventListener('drop', function (e) {
+    // 先阻止默认行为
     e.preventDefault();
-  };
-  target.ondragleave = function (e) {
-    console.log('dragleave');
-  };
-  target.ondrop = function (e) {
-    console.log('drop');
-  };
+    if (e.target.id = 'target') {
+        dragged.parentNode.removeChild(dragged);
+        e.target.appendChild(dragged);
+    }
+  }, false);
 </script>
+
+<!--<script>-->
+<!--var elem = document.getElementById('source');-->
+<!--source.draggable = true;-->
+<!--target.dropable = true;-->
+<!--source.ondragstart = function (e) {-->
+<!--//    console.log('ondragstart: ', e);-->
+<!--this.y = parseFloat(this.style.top);-->
+<!--this.x = parseFloat(this.style.left);-->
+<!--this.offsetX = e.offsetX;-->
+<!--this.offsetY = e.offsetY;-->
+<!--};-->
+
+<!--source.ondrag = function (e) {-->
+<!--if (e.pageX === 0 || e.pageY === 0) {-->
+<!--this.style.left = this.style.left;-->
+<!--this.style.top = this.style.top;-->
+<!--return;-->
+<!--}-->
+<!--this.style.left = e.offsetX - this.offsetX + this.x + 'px';-->
+<!--this.style.top = e.offsetY - this.offsetY + this.y + 'px';-->
+<!--};-->
+
+<!--source.ondragend = function (e) {-->
+<!--console.dir('ondragend',e);-->
+<!--};-->
+
+<!--target.ondragenter = function (e) {-->
+<!--console.log('dragenter');-->
+<!--};-->
+<!--target.ondragover = function (e) {-->
+<!--console.log('dragover');-->
+<!--e.preventDefault();-->
+<!--};-->
+<!--target.ondragleave = function (e) {-->
+<!--console.log('dragleave');-->
+<!--};-->
+<!--target.ondrop = function (e) {-->
+<!--console.log('drop');-->
+<!--};-->
+<!--</script>-->
 </html>

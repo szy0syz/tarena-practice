@@ -5,14 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<div class="dropzone">
-    <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
-        This div is draggable
-    </div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+<div class="dropzone"></div>
+
+<div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+    This div is draggable
 </div>
-<div class="dropzone"></div>
-<div class="dropzone"></div>
-<div class="dropzone"></div>
 
 <style>
     #draggable {
@@ -41,6 +41,7 @@
 
   document.addEventListener("dragstart", function (event) {
     // store a ref. on the dragged elem
+    console.dir(event.target);
     dragged = event.target;
     // make it half transparent
     event.target.style.opacity = .5;

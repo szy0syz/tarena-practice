@@ -4,110 +4,127 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        #target {
+            background: blueviolet;
+            width: 200px;
+            height: 200px;
+        }
+
         #source {
             width: 160px;
             height: 100px;
-            position: absolute;
-            left: 100px;
-            top: 450px;
-            background-color: red;
+            float: right;
+            color: red;
             text-align: center;
+            border: 1px solid #cccccc;
         }
     </style>
 </head>
 <body>
 <!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
 在垃圾桶上松手也变为半透明！提示：只需要用到目标对象的四个事件-->
-<!--<img width="100px" height="50px" style="z-index: 2;position: absolute;top: 20px;left: 50px;" id="plane" src="p3.png" alt="plane">-->
 
-<!--<img src="trash.jpeg" style="opacity: 0.5;position: absolute;top: 300px;left: 300px;" alt="trash" id="trash">-->
-<div id="target"
-     style="background-color: #22bb22;width: 200px;height: 200px;display:inline-block;margin: 0 auto;"></div>
+<div id="target" class="dropzone"></div>
 
-<div id="source" draggable="true"
-     ondragstart="event.dataTransfer.setData('text/plain',null)">
+<div id="source" draggable="true">
     This div is draggable
 </div>
+
 </body>
 
-<script type="text/javascript">
+<script>
   var dragged;
 
-  document.addEventListener('drag', function (e) {
-    // 没用的事件，置空。
-  }, false);
-  document.addEventListener('dargstart', function (e) {
-    // 全局空间保存 源对象
-    dragged = e.target;
-    e.target.style.border = '1px solid #ccc';
-  }, false);
-  document.addEventListener('dragend', function (e) {
-    e.target.style.border = '';
+  /* events fired on the draggable target */
+  document.addEventListener("drag", function (event) {
+
   }, false);
 
-  /////////////////////
+  document.addEventListener("dragstart", function (event) {
+    // store a ref. on the dragged elem
+    console.dir(event.target);
+    dragged = event.target;
+    // make it half transparent
+    event.target.style.opacity = .5;
+  }, false);
 
-  document.addEventListener('dragenter', function (e) {
-    if (e.target.id = 'target') {
-      console.log('dragenter+++');
-      e.target.style.opacity = .5;
+  document.addEventListener("dragend", function (event) {
+    // reset the transparency
+    event.target.style.opacity = "";
+  }, false);
+
+  /* events fired on the drop targets */
+  document.addEventListener("dragover", function (event) {
+    // prevent default to allow drop
+    event.preventDefault();
+  }, false);
+
+  document.addEventListener("dragenter", function (event) {
+    // highlight potential drop target when the draggable element enters it
+    if (event.target.className == "dropzone") {
+      event.target.style.background = "purple";
     }
 
   }, false);
-  document.addEventListener('dragleave', function (e) {
-    // 到底是哪个哥哥的离开，我的判断好！
-    if (e.target.id = 'target') {
-      e.target.style.opacity = "";
+
+  document.addEventListener("dragleave", function (event) {
+    // reset background of potential drop target when the draggable element leaves it
+    if (event.target.className == "dropzone") {
+      event.target.style.background = "";
     }
+
   }, false);
-  document.addEventListener('drop', function (e) {
-    // 先阻止默认行为
-    e.preventDefault();
-    if (e.target.id = 'target') {
-        dragged.parentNode.removeChild(dragged);
-        e.target.appendChild(dragged);
+
+  document.addEventListener("drop", function (event) {
+    // prevent default action (open as link for some elements)
+    event.preventDefault();
+    // move dragged elem to the selected drop target
+    if (event.target.className == "dropzone") {
+      event.target.style.background = "";
+      dragged.parentNode.removeChild(dragged);
+      event.target.appendChild(dragged);
     }
+
   }, false);
 </script>
 
-<!--<script>-->
-<!--var elem = document.getElementById('source');-->
-<!--source.draggable = true;-->
-<!--target.dropable = true;-->
-<!--source.ondragstart = function (e) {-->
-<!--//    console.log('ondragstart: ', e);-->
-<!--this.y = parseFloat(this.style.top);-->
-<!--this.x = parseFloat(this.style.left);-->
-<!--this.offsetX = e.offsetX;-->
-<!--this.offsetY = e.offsetY;-->
-<!--};-->
+<!--<script type="text/javascript">-->
+  <!--var dragged;-->
 
-<!--source.ondrag = function (e) {-->
-<!--if (e.pageX === 0 || e.pageY === 0) {-->
-<!--this.style.left = this.style.left;-->
-<!--this.style.top = this.style.top;-->
-<!--return;-->
-<!--}-->
-<!--this.style.left = e.offsetX - this.offsetX + this.x + 'px';-->
-<!--this.style.top = e.offsetY - this.offsetY + this.y + 'px';-->
-<!--};-->
+  <!--document.addEventListener("drag", function (e) {-->
+    <!--//没用-->
+  <!--}, false);-->
+  <!--document.addEventListener('dragstart', function (e) {-->
+    <!--// 全局空间保存 源对象-->
+    <!--dragged = e.target;-->
+<!--//    e.target.style.opacity = .4;-->
+  <!--}, false);-->
+  <!--document.addEventListener('dragend', function (e) {-->
+<!--//    e.target.style.opacity = 1;-->
+  <!--}, false);-->
 
-<!--source.ondragend = function (e) {-->
-<!--console.dir('ondragend',e);-->
-<!--};-->
+  <!--/////////////////////-->
 
-<!--target.ondragenter = function (e) {-->
-<!--console.log('dragenter');-->
-<!--};-->
-<!--target.ondragover = function (e) {-->
-<!--console.log('dragover');-->
-<!--e.preventDefault();-->
-<!--};-->
-<!--target.ondragleave = function (e) {-->
-<!--console.log('dragleave');-->
-<!--};-->
-<!--target.ondrop = function (e) {-->
-<!--console.log('drop');-->
-<!--};-->
+  <!--document.addEventListener('dragenter', function (e) {-->
+    <!--if (e.target.id = 'target') {-->
+      <!--console.log('dragenter+++');-->
+<!--//      e.target.style.opacity = .5;-->
+    <!--}-->
+
+  <!--}, false);-->
+  <!--document.addEventListener('dragleave', function (e) {-->
+    <!--// 到底是哪个哥哥的离开，我的判断好！-->
+    <!--if (e.target.id = 'target') {-->
+      <!--e.target.style.opacity = 1;-->
+    <!--}-->
+  <!--}, false);-->
+  <!--document.addEventListener('drop', function (e) {-->
+    <!--// 先阻止默认行为-->
+    <!--e.preventDefault();-->
+    <!--if (e.target.id = 'target') {-->
+<!--//        dragged.parentNode.removeChild(dragged);-->
+<!--//        e.target.appendChild(dragged);-->
+    <!--}-->
+  <!--}, false);-->
 <!--</script>-->
 </html>

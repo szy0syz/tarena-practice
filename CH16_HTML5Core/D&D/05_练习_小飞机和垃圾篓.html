@@ -5,7 +5,7 @@
     <title>小飞机报废处理</title>
     <style type="text/css">
         .target {
-            opacity: 1;
+            opacity: .5;
         }
 
         .source {
@@ -21,6 +21,9 @@
 <img id="trash" class="target" src="trash.jpeg" alt="trash">
 <img id="plane" draggable="true" class="source" src="p3.png" alt="plane"
      ondragstart="event.dataTransfer.setData('text/plain',null)">
+
+<!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
+在垃圾桶上松手也变为半透明！提示：只需要用到目标对象的四个事件-->
 
 <script>
   var trash = document.getElementById('trash');
@@ -49,13 +52,13 @@
   // 5. document.dragenter
   document.addEventListener('dragenter', function (ev) {
     if (ev.target === trash && dragged === plane) {
-      console.log('小飞机进入到垃圾篓范围内了！');
+      ev.target.style.opacity = 1;
     }
   }, false);
   // 6. document.dragleave
   document.addEventListener('dragleave', function (ev) {
     if (ev.target === trash && dragged === plane) {
-      console.log('小飞机离开垃圾篓范围内了！');
+      ev.target.style.opacity = "";
     }
   }, false);
   // 7. document.drop
@@ -63,6 +66,7 @@
     ev.preventDefault();
     if (ev.target === trash && dragged === plane) {
       console.log('小飞机在垃圾篓上drop了');
+      ev.target.style.opacity = "";
     }
   }, false);
 </script>

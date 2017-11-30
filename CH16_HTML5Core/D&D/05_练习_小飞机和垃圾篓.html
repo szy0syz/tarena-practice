@@ -12,14 +12,14 @@
             width: 100px;
             height: 50px;
             position: absolute;
-            right: 200px;
-            top: 200px;
+            /*left: 400px;*/
+            /*top: 200px;*/
         }
     </style>
 </head>
 <body>
 <img id="trash" class="target" src="trash.jpeg" alt="trash">
-<img id="plane" draggable="true" class="source" src="p3.png" alt="plane"
+<img id="plane" style="left: 400px;top: 200px;" draggable="true" class="source" src="p3.png" alt="plane"
      ondragstart="event.dataTransfer.setData('text/plain',null)">
 
 <!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
@@ -38,11 +38,16 @@
   document.addEventListener('dragstart', function (ev) {
     dragged = ev.target;
     ev.target.style.border = '1px solid #ccc';
+    // 注意 这里的this，已经不是触发的元素，因为事件监听改到了document上。
+    ev.target.dx = ev.pageX - parseFloat(ev.target.style.left);
+    ev.target.dy = ev.pageY - parseFloat(ev.target.style.top);
   }, false);
   // 3. document.dragend：判断谁end，恢复样式，进行需求逻辑。
   document.addEventListener('dragend', function (ev) {
     if (ev.target.id === 'plane') {
       ev.target.style.border = "";
+      ev.target.style.left = ev.pageX - ev.target.dx + 'px';
+      ev.target.style.top = ev.pageY - ev.target.dy + 'px';
     }
   }, false);
   // 4. document.dragover 阻止默认行为，开启drop事件
@@ -65,7 +70,6 @@
   document.addEventListener('drop', function (ev) {
     ev.preventDefault();
     if (ev.target === trash && dragged === plane) {
-      console.log('小飞机在垃圾篓上drop了');
       ev.target.style.opacity = "";
     }
   }, false);

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小飞机报废处理</title>
+    <style type="text/css">
+        .target {
+            opacity: .5;
+        }
+
+        .source {
+            width: 100px;
+            height: 50px;
+        }
+
+        .container{
+            width: 100px;
+            height: 150px;
+            float: left;
+            margin-right: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<img id="trash" class="target" src="trash.jpeg" alt="trash">
+<div class="container">
+    <img id="plane1" draggable="true" class="source" src="p3.png" alt="plane1"
+         ondragstart="event.dataTransfer.setData('text/plain',null)">
+    <img id="plane2" draggable="true" class="source" src="p3.png" alt="plane1"
+         ondragstart="event.dataTransfer.setData('text/plain',null)">
+    <img id="plane3" draggable="true" class="source" src="p3.png" alt="plane1"
+         ondragstart="event.dataTransfer.setData('text/plain',null)">
+</div>
+
+<!--练习1：垃圾桶初始时半透明；拖动小飞机进入垃圾桶变为不透明；离开后重新恢复半透明；
+在垃圾桶上松手也变为半透明！提示：只需要用到目标对象的四个事件-->
+
+<script>
+  var trash = document.getElementById('trash');
+  var plane = document.getElementById('plane');
+  // 定义全局变量接收页面正在被D&D的元素，正常电脑只有一个鼠标，怕只会有一个拖拽元素吧！
+  // 0. 全局变量保存D&D元素引用
+  var dragged;
+  // 1. document-drag事件置空
+  document.addEventListener('drag', function (ev) {
+  }, false);
+  // 2. document-dragstart：保存引用，记录初始数据。
+  document.addEventListener('dragstart', function (ev) {
+    dragged = ev.target;
+    ev.target.style.border = '1px solid #ccc';
+    // 注意 这里的this，已经不是触发的元素，因为事件监听改到了document上。
+    ev.target.dx = ev.pageX - parseFloat(ev.target.style.left);
+    ev.target.dy = ev.pageY - parseFloat(ev.target.style.top);
+  }, false);
+  // 3. document.dragend：判断谁end，恢复样式，进行需求逻辑。
+  document.addEventListener('dragend', function (ev) {
+    if (ev.target.id === 'plane') {
+      ev.target.style.border = "";
+      ev.target.style.left = ev.pageX - ev.target.dx + 'px';
+      ev.target.style.top = ev.pageY - ev.target.dy + 'px';
+    }
+  }, false);
+  // 4. document.dragover 阻止默认行为，开启drop事件
+  document.addEventListener('dragover', function (ev) {
+    ev.preventDefault();
+  }, false);
+  // 5. document.dragenter
+  document.addEventListener('dragenter', function (ev) {
+    if (ev.target === trash && dragged === plane) {
+      ev.target.style.opacity = 1;
+    }
+  }, false);
+  // 6. document.dragleave
+  document.addEventListener('dragleave', function (ev) {
+    if (ev.target === trash && dragged === plane) {
+      ev.target.style.opacity = "";
+    }
+  }, false);
+  // 7. document.drop
+  document.addEventListener('drop', function (ev) {
+    ev.preventDefault();
+    if (ev.target === trash && dragged === plane) {
+      ev.target.style.opacity = "";
+    }
+  }, false);
+</script>
+</body>
+</html>

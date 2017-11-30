@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小飞机报废处理</title>
+    <style type="text/css">
+        .target {
+            opacity: 1;
+        }
+
+        .source {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            right: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<img id="trash" class="target" src="trash.jpeg" alt="trash">
+<img id="plane" draggable="true" class="source" src="p3.png" alt="plane"
+     ondragstart="event.dataTransfer.setData('text/plain',null)">
+
+<script>
+  var trash = document.getElementById('trash');
+  var plane = document.getElementById('plane');
+  // 定义全局变量接收页面正在被D&D的元素，正常电脑只有一个鼠标，怕只会有一个拖拽元素吧！
+  // 0. 全局变量保存D&D元素引用
+  var dragged;
+  // 1. document-drag事件置空
+  document.addEventListener('drag', function (ev) {
+  }, false);
+  // 2. document-dragstart：保存引用，记录初始数据。
+  document.addEventListener('dragstart', function (ev) {
+    dragged = ev.target;
+    ev.target.style.border = '1px solid #ccc';
+  }, false);
+  // 3. document.dragend：判断谁end，恢复样式，进行需求逻辑。
+  document.addEventListener('dragend', function (ev) {
+    if (ev.target.id === 'plane') {
+      ev.target.style.border = "";
+    }
+  }, false);
+  // 4. document.dragover 阻止默认行为，开启drop事件
+  document.addEventListener('dragover', function (ev) {
+    ev.preventDefault();
+  }, false);
+  // 5. document.dragenter
+  document.addEventListener('dragenter', function (ev) {
+    if (ev.target === trash && dragged === plane) {
+      console.log('小飞机进入到垃圾篓范围内了！');
+    }
+  }, false);
+  // 6. document.dragleave
+  document.addEventListener('dragleave', function (ev) {
+    if (ev.target === trash && dragged === plane) {
+      console.log('小飞机离开垃圾篓范围内了！');
+    }
+  }, false);
+  // 7. document.drop
+  document.addEventListener('drop', function (ev) {
+    ev.preventDefault();
+    if (ev.target === trash && dragged === plane) {
+      console.log('小飞机在垃圾篓上drop了');
+    }
+  }, false);
+</script>
+</body>
+</html>

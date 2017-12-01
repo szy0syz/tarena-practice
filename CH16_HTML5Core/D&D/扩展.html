@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .container {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<h3>鼠标拖动本地文件显示</h3>
+<div id="container" class="container"></div>
+
+</body>
+<script type="text/javascript">
+  document.addEventListener('dragover', function (ev) {
+    ev.preventDefault();
+  }, false);
+  document.addEventListener('drop', function (ev) {
+    ev.preventDefault();
+    // console.dir(ev.dataTransfer);
+    var files = ev.dataTransfer.files;
+    var list = [];
+    for (var i = 0; i < files.length; i++) {
+      list.push(files[i]);
+
+    }
+    var reader = new FileReader();
+    reader.readAsDataURL(list[0]);
+    reader.onload = function () {
+      var dataURL = reader.result;
+      var img = new Image();
+      img.src = dataURL;
+      container.appendChild(img);
+    }
+  }, false);
+</script>
+</html>

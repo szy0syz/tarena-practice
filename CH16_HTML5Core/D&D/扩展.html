@@ -6,7 +6,7 @@
     <style type="text/css">
         .container {
             width: 800px;
-            height: 600px;
+            height: 640px;
             border: 1px solid #cccccc;
         }
     </style>
@@ -26,17 +26,28 @@
     var files = ev.dataTransfer.files;
     var list = [];
     for (var i = 0; i < files.length; i++) {
-      list.push(files[i]);
-
+      // list.push(files[i]);
+      handle(files[i]);
     }
+    // var reader = new FileReader();
+    // reader.readAsDataURL(list[0]);
+    // reader.onload = function () {
+    //   var dataURL = reader.result;
+    //   var img = new Image();
+    //   img.src = dataURL;
+    //   container.appendChild(img);
+    // }
+  }, false);
+
+  function handle(file) {
     var reader = new FileReader();
-    reader.readAsDataURL(list[0]);
+    reader.readAsDataURL(file);
     reader.onload = function () {
       var dataURL = reader.result;
       var img = new Image();
       img.src = dataURL;
       container.appendChild(img);
     }
-  }, false);
+  }
 </script>
 </html>

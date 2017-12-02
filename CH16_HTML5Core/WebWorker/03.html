@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" id="myForm">
+    <input type="text" id="myNum" title>
+    <input type="submit" value="提交">
+</form>
+<script>
+  myForm.onsubmit = function (ev) {
+    // 阻止form默认行为
+    ev.preventDefault();
+    var num = parseInt(myNum.value);
+    var w1 = new Worker('js/2.js');
+    w1.postMessage(JSON.stringify({command: 'start', num: num, delay: 4000}));
+  }
+</script>
+</body>
+</html>

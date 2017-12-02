@@ -1,6 +1,6 @@
 console.log('脚本开始执行...');
 // 质数，又称素数，指在大于1的自然数中，除了1和此整数自身外，无法被其他自然数整除的数。
-var n = 5, time = 2000;
+var n = 5, time = 5000;
 var stamp = new Date().getTime();
 var dtime;
 do{

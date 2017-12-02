@@ -9,6 +9,7 @@
     <input type="text" id="myNum" title>
     <input type="submit" value="提交">
 </form>
+<div id="res" style="border: 1px solid #ccc;">null</div>
 <script>
   myForm.onsubmit = function (ev) {
     // 阻止form默认行为
@@ -16,6 +17,12 @@
     var num = parseInt(myNum.value);
     var w1 = new Worker('js/2.js');
     w1.postMessage(JSON.stringify({command: 'start', num: num, delay: 4000}));
+    w1.onmessage = function (ev) {
+      var res = ev.data;
+      console.log(res);
+      var ele = document.getElementById('res');
+      ele.innerHTML = res;
+    }
   }
 </script>
 </body>

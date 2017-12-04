@@ -2,9 +2,116 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+    <title>响应式网页</title>
+    <link rel="stylesheet" href="../CH02_CSSCore/reset.mini.css">
+    <style type="text/css">
+
+        .container{
+            margin: 0 10px;
+        }
+
+        .header{
+            border: 1px solid #cccccc;
+            background-color: darkgreen;
+            height: 50px;
+            font-size: 24px;
+        }
+
+        .header a{
+            color: #ffffff;
+        }
+
+        .content{
+            border: 1px solid #cccccc;
+            margin-top: 5px;
+            height: 500px;
+        }
+
+        .context{
+            background-color: peru;
+            color: #000000;
+            width: 60%;
+        }
+
+        .lf{
+            float: left;
+        }
+
+        .left-sider{
+            width: 20%;
+        }
+
+        .left-sider>div{
+            background-color: purple;
+            height: 300px;
+            margin-right: 8px;
+            border-radius: 10px;
+        }
+
+        .right-sider{
+            width: 20%;
+        }
+
+        .right-sider>div{
+            background-color: sienna;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        .right-sider p{
+            font-size: 18px;
+            padding: 8px;
+            line-height: 30px;
+        }
+
+        .img-list img{
+            float: left;
+            width: 25%;
+        }
+    </style>
 </head>
 <body>
-$END$
+    <div class="container">
+        <nav class="header">
+            <span>
+                <a href="#">首页</a>
+                <a href="#">影集</a>
+                <a href="#">活动</a>
+            </span>
+            <span></span>
+            <span>
+                <input type="text" placeholder="search">
+            </span>
+        </nav>
+        <section class="content">
+            <div class="left-sider lf">
+                <div>
+                    <div><span>岁月激情</span></div>
+                    <div><span>燃烧岁月</span></div>
+                    <div><span>峥嵘岁月</span></div>
+                </div>
+
+            </div>
+
+            <div class="context lf">
+                <div class="img-list">
+                    <img src="img/j01.jpeg" alt="图片加载失败">
+                    <img src="img/j02.jpeg" alt="图片加载失败">
+                    <img src="img/j03.jpeg" alt="图片加载失败">
+                    <img src="img/j04.jpeg" alt="图片加载失败">
+                </div>
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta et illum molestias perferendis quos ratione unde. Accusantium maxime molestias nulla perspiciatis porro quia. Eaque eveniet laudantium magnam perspiciatis voluptatum!</p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet dicta molestiae officiis! Dicta dignissimos doloribus explicabo facilis impedit iste maxime natus officiis, pariatur placeat, porro repellat sint totam vitae.</span><span>Consectetur consequuntur corporis dolore eos error esse et hic id iusto laborum modi nam nemo neque nisi odio optio quasi, quod sed tempora ut velit veniam voluptates! Ad eius, quod.</span></p>
+                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad delectus dignissimos distinctio dolorem doloremque ducimus error esse facere facilis labore maxime nobis obcaecati omnis provident sunt tenetur ullam ut, voluptatibus.</span><span>Aliquid cum, dolores earum, et, ipsa laboriosam magni nulla pariatur quidem sed ullam vero voluptas. Aut cumque dolorem, doloremque inventore ipsam, laboriosam nihil odio quam sapiente sit, ut voluptate voluptates?</span><span>Atque ea exercitationem fugit laborum optio quaerat rem sapiente ullam! Deserunt, expedita, fugit. Aliquid atque earum eos esse necessitatibus nostrum quod unde. Esse, ipsa placeat? Accusamus minus quod rerum tenetur!</span><span>Corporis ducimus eum iure minus natus nulla odio officia perferendis quis saepe sunt, velit? Aliquam architecto, culpa delectus, dignissimos dolorem eos facere, harum minus qui quibusdam quis sunt tenetur veniam?</span></p>
+                </div>
+            </div>
+            <div class="right-sider lf">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aspernatur, consequatur cum cumque dicta dignissimos dolorem, ducimus expedita facilis illo iusto laboriosam natus nostrum officiis omnis quos repudiandae vel voluptates!<span>A ab aliquam deserunt dicta dolores eius eligendi, enim est excepturi exercitationem illo incidunt ipsam ipsum laborum magnam maiores mollitia nisi obcaecati officia perferendis possimus recusandae sit soluta ullam veritatis?</span></p>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

@@ -27,6 +27,22 @@ body {
     clear: both;
 }
 
+.list-inline {
+    /*li默认样式去除，内边距去除*/
+    list-style: none;
+    padding: 0;
+    margin-left: -5px;
+}
+
+.list-inline > li {
+    padding: 0 5px;
+    display: inline-block;
+}
+
+.pull-right {
+    float: right !important;
+}
+
 /**系统默认分四种屏幕的样式**/
 
 /**lg(超宽PC屏幕)屏幕：w>=1200px**/

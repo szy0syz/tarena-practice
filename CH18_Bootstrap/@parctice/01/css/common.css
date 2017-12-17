@@ -43,13 +43,68 @@ body {
     float: right !important;
 }
 
-/**系统默认分四种屏幕的样式**/
+a {
+    color: #333;
+    text-decoration: none;
+}
 
+h1 {
+    font-size: 36px;
+    margin: 20px 0 10px 0; /*抄袭bootstrap*/
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 6px 12px;
+    background: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background: #337ab7;
+    color: #fff;
+    border-color: #2e6ba4;
+}
+
+.center-block {
+    display: block;
+    margin: 0 auto;
+}
+
+.container-fluid:before {
+    content: ' ';
+    display: table;
+}
+
+.container-fluid:after {
+    content: ' ';
+    display: table;
+    clear: both;
+}
+
+.container-fluid{
+    margin: 0 20px;
+}
+
+.my-img {
+    float: left;
+    padding: 5px;
+}
+
+/**系统默认分四种屏幕的样式**/
 /**lg(超宽PC屏幕)屏幕：w>=1200px**/
 @media screen and (min-width: 1200px) {
     .container {
         width: 1170px; /*bootstrap 默认数值*/
         margin: 0 auto; /*水平居中*/
+    }
+
+    .my-img {
+        width: 25%;
     }
 }
 
@@ -59,6 +114,10 @@ body {
         width: 970px; /*bootstrap 默认数值*/
         margin: 0 auto; /*水平居中*/
     }
+
+    .my-img {
+        width: 25%;
+    }
 }
 
 /**sm(Small，平板电脑)屏幕：992px>w>=768px**/
@@ -67,11 +126,17 @@ body {
         width: 750px; /*bootstrap 默认数值*/
         margin: 0 auto; /*水平居中*/
     }
+
+    .my-img {
+        width: 50%;
+    }
 }
 
 /**xs(ExtraSmall，手机设备)屏幕：768px>w**/
-@media screen and (min-width: 767px) {
-
+@media screen and (max-width: 767px) {
+    .my-img {
+        width: 100%;
+    }
 }
 
 

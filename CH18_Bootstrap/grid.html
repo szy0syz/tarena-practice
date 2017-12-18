@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap-grid</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        div {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>bootstrap 栅格系统</h1>
+
+    <h3>1行n列</h3>
+    <div class="row">
+        <div class="col-lg-1">lg-1</div>
+        <div class="col-lg-2">lg-2</div>
+        <div class="col-lg-3">lg-3</div>
+        <div class="col-lg-6">lg-6</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9">lg-9</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">md-4</div>
+    </div>
+
+    <h3>带偏移的栅格</h3>
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-4">lg-offset-4</div>
+    </div>
+</div>
+<br><br><br><br><br><br>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  // bootlint
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "https://maxcdn.bootstrapcdn.com/bootlint/latest/bootlint.min.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

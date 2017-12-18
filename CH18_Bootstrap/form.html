@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .form-horizontal .control-label {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>全局CSS样式————表单</h1>
+    <p>提示：注意Html5规范中推荐的表单写法</p>
+    <h3>1. 默认表单</h3>
+    <form>
+        <div class="form-group">
+            <label class="control-label" for="uname">用户名：</label>
+            <input class="form-control" type="text" id="uname">
+            <span class="help-block">用户名必须是字母、数字或下划线</span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="password">密 码：</label>
+            <input class="form-control" type="text" id="password">
+            <span class="help-block">密码必须包含大小写</span>
+        </div>
+
+        <!--注意H5规范推荐的复选框和单选框的写法-->
+        <!--SRP:单一责任原则-->
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">保存登录七天
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-success" type="button" value="提交">
+            <input class="btn btn-danger" type="button" value="重置">
+        </div>
+
+    </form>
+
+    <hr>
+
+    <h3>2.行内表单</h3>
+    <form class="form-inline">
+        <div class="form-group">
+            <!--Screen Reader Only 仅屏幕阅读器可见-->
+            <label class="sr-only" for="uname2">用户名：</label>
+            <input class="form-control" type="text" id="uname2" placeholder="用户名">
+        </div>
+
+        <div class="form-group">
+            <label class="sr-only" for="password2">密 码：</label>
+            <input class="form-control" type="text" id="password2" placeholder="密码">
+        </div>
+
+        <!--注意H5规范推荐的复选框和单选框的写法-->
+        <!--SRP:单一责任原则-->
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox">保存登录七天
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-success" type="button" value="提交">
+            <input class="btn btn-danger" type="button" value="重置">
+        </div>
+
+    </form>
+
+    <h3>3.水平表单</h3>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-xs-2">
+                <label class="control-label" for="uname3">用户名：</label>
+            </div>
+            <div class="col-xs-5">
+                <input class="form-control" type="text" id="uname3">
+            </div>
+            <div class="col-xs-5">
+                <span class="help-block">用户名必须是字母、数字或下划线</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-2">
+                <label class="control-label" for="password3">密 码：</label>
+            </div>
+            <div class="col-xs-5">
+                <input class="form-control" type="text" id="password3">
+            </div>
+            <div class="col-xs-5">
+                <span class="help-block">密码必须包含大小写</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-10 col-xs-offset-2">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">保存登录七天
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-1 col-xs-offset-2">
+                <input class="btn btn-success" type="button" value="提交">
+            </div>
+            <div class="col-xs-1">
+                <input class="btn btn-danger" type="button" value="重置">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  // bootlint
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "https://maxcdn.bootstrapcdn.com/bootlint/latest/bootlint.min.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

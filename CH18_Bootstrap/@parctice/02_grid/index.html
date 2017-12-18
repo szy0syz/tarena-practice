@@ -14,18 +14,18 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        div {
-            border: 1px solid #cccccc;
-        }
+        /*div {*/
+            /*border: 1px solid #cccccc;*/
+        /*}*/
     </style>
 </head>
 <body>
 
 <div class="header">
     <div class="container">
-        <span>Bootstrap</span>
-        <span>Css</span>
-        <span>Type</span>
+        <span class="h1">Bootstrap</span>
+        <span class="h1"><em>Css</em></span>
+        <span class="h3 text-muted">Type</span>
     </div>
 </div>
 
@@ -44,13 +44,85 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                col-lg-3
+                <ul class="list-unstyled">
+                    <li>home</li>
+                    <li>basic</li>
+                    <li>css</li>
+                    <li>component</li>
+                    <li>jsplugin</li>
+                    <li>customize</li>
+                    <li>less</li>
+                </ul>
             </div>
             <div class="col-lg-6">
-                col-lg-6
+                <div class="row">
+                    <blockquote>
+                        <p>Book List</p>
+                        <footer>from <cite title="BookStore">BookStore</cite></footer>
+                    </blockquote>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Price</th>
+                                <th>PubDate</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>红楼梦</td>
+                                <td>曹雪芹</td>
+                                <td>10.99</td>
+                                <td>2010-1-1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>西游记</td>
+                                <td>吴承恩</td>
+                                <td>20.99</td>
+                                <td>2010-2-1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>水浒传</td>
+                                <td>施耐庵</td>
+                                <td>30.99</td>
+                                <td>2010-3-1</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>三国演义</td>
+                                <td>罗贯中</td>
+                                <td>40.99</td>
+                                <td>2010-8-1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3">
-                col-lg-3
+                <p class="h2">Fiture</p>
+                <dl>
+                    <dt>html</dt>
+                    <dd>hyper text markup language</dd>
+                    <dt>javascript</dt>
+                    <dd>ecmaScript dom bom</dd>
+                    <dt>bootstrap</dt>
+                    <dd>basic css component jsplugin</dd>
+                </dl>
+                <blockquote class="blockquote-reverse">
+                    <p>From Tarena</p>
+                    <footer>
+                        from WevMatrix
+                    </footer>
+                </blockquote>
             </div>
         </div>
     </div>

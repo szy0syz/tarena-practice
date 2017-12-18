@@ -1,0 +1,17 @@
+.left-nav {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.header {
+    padding: 5px 0 10px 0;
+}
+
+.list-inline a {
+    line-height: 44px;
+}
+
+#mySrearch {
+    margin-top: 10px;
+}

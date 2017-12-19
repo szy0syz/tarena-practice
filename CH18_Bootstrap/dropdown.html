@@ -16,6 +16,35 @@
 </head>
 <body>
 
+<div class="container">
+    <h1>最基本的下拉菜单</h1>
+    <!--对，要有三层结构-->
+    <div class="dropdown">
+        <a data-toggle="dropdown" href="#">产品大全</a>
+        <ul class="dropdown-menu">
+            <li><a href="#">氮肥</a></li>
+            <li><a href="#">磷肥</a></li>
+            <li><a href="#">钾肥</a></li>
+            <li><a href="#">复合肥</a></li>
+        </ul>
+    </div>
+
+    <h1>复杂的下拉菜单</h1>
+    <div class="dropdown">
+        <a data-toggle="dropdown" href="#">产品大全</a>
+        <ul class="dropdown-menu">
+            <li class="dropdown-header">氮肥</li>
+            <li><a href="#">尿素</a></li>
+            <li><a href="#">碳铵</a></li>
+            <li><a href="#">二胺</a></li>
+            <li class="dropdown-header">其它</li>
+            <li><a href="#">磷肥</a></li>
+            <li><a href="#">钾肥</a></li>
+            <li class="divider"></li>
+            <li><a href="#">复合肥</a></li>
+        </ul>
+    </div>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

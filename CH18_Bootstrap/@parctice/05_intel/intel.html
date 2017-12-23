@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>英特尔：平板电脑, 2 合 1 电脑, 笔记本电脑, 台式机, 智能手机, 服务, 嵌入式技术</title>
+
+    <!-- Bootstrap -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        div {
+            border: 1px solid #ddd;
+        }
+        .mylogo{
+            height: 42px;
+            width: 63px;
+            background: url("img/hdr-spr.png") no-repeat center;
+            background-position: 0 -513px;
+            margin-top: -5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <!--商标和汉堡-->
+            <a class="navbar-brand" href="#">
+                <div class="mylogo"></div>
+            </a>
+            <a href="#iMune" data-toggle="collapse" class="navbar-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div id="iMune" class="navbar-collapse collapse">
+            <button type="button" class="btn navbar-inverse navbar-btn navbar-left" href="#">
+                <div class="dropdown">
+                    <a data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+                        产品大全
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">CPU</a></li>
+                        <li><a href="#">SSD</a></li>
+                        <li><a href="#">笔记本电脑</a></li>
+                    </ul>
+                </div>
+            </button>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#">
+                        <span>China(简体中文)</span>
+                        <span class="glyphicon glyphicon-globe"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>登录</span>
+                        <span class="glyphicon glyphicon-user"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">1大 <br> 1大</div>
+            <div class="col-sm-12 col-md-4">
+                <!--让他自己溢出把，别再写一行-->
+                <div class="row">
+                    <div class="col-sm-6 col-md-12">1小</div>
+                    <div class="col-sm-6 col-md-12">1小</div>
+                </div>
+            </div>
+        </div>
+
+        <!--第二个区域-->
+        <div class="row">
+            <!--倒着写，顺序就颠倒过来了-->
+            <div class="col-sm-12 col-md-8 col-md-push-4">
+                2大 <br> 2大
+            </div>
+            <div class="col-sm-12 col-md-4 col-md-pull-8">
+                <div class="row">
+                    <div class="col-sm-6 col-md-12">2小</div>
+                    <div class="col-sm-6 col-md-12">2小</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--第三个区域-->
+        <div class="row">
+            <div class="col-sm-12 col-md-8">大 <br> 大</div>
+            <div class="col-sm-12 col-md-4">
+                <div class="row">
+                    <div class="col-sm-6 col-md-12">小</div>
+                    <div class="col-sm-6 col-md-12">小</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                1<br>
+                2<br>
+                3<br>
+                4<br>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                one<br>
+                tow<br>
+                three<br>
+                four<br>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                一<br>
+                二<br>
+                三<br>
+                四<br>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                I<br>
+                II<br>
+                II<br>
+                IX<br>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    var s = document.createElement("script");
+    s.onload = function () {
+      bootlint.showLintReportForCurrentDocument([]);
+    };
+    s.src = "https://maxcdn.bootstrapcdn.com/bootlint/latest/bootlint.min.js";
+    document.body.appendChild(s)
+  })();
+</script>
+</body>
+</html>

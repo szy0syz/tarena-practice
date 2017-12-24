@@ -8,79 +8,88 @@
 
     <!-- Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/intel.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <style type="text/css">
         div {
             border: 1px solid #ddd;
         }
-        .mylogo{
-            height: 42px;
-            width: 63px;
-            background: url("img/hdr-spr.png") no-repeat center;
-            background-position: 0 -513px;
-            margin-top: -5px;
-        }
     </style>
+
 </head>
 <body>
 
-<div class="navbar navbar-inverse">
+
+<div class="navbar navbar-default navbar-fixed-top">
+    <!--定宽容器-->
     <div class="container">
+        <!--导航条的头部 = "商标" + "汉堡"-->
         <div class="navbar-header">
-            <!--商标和汉堡-->
             <a class="navbar-brand" href="#">
-                <div class="mylogo"></div>
+                <span class="logo"></span>
             </a>
-            <a href="#iMune" data-toggle="collapse" class="navbar-toggle">
+            <a class="navbar-toggle" href="#">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
         </div>
-        <div id="iMune" class="navbar-collapse collapse">
-            <button type="button" class="btn navbar-inverse navbar-btn navbar-left" href="#">
-                <div class="dropdown">
-                    <a data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
-                        产品大全
-                        <span class="caret"></span>
-                    </a>
+
+        <!--导航条的下来折叠部分 = 导航+表单+文字...-->
+        <div class="navbar-collapse">
+            <!--左侧的导航菜单-->
+            <ul class="nav navbar-nav">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">新闻</a></li>
+                <li class="active dropdown">
+                    <a data-toggle="dropdown" href="#">菜单 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">CPU</a></li>
-                        <li><a href="#">SSD</a></li>
-                        <li><a href="#">笔记本电脑</a></li>
+                        <li><a href="#">英特尔产品</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">热点话题</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">用户</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">购买</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">产品支持</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">关于英特尔</a></li>
+                        <li class="divider"></li>
                     </ul>
-                </div>
-            </button>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#">
-                        <span>China(简体中文)</span>
-                        <span class="glyphicon glyphicon-globe"></span>
-                    </a>
                 </li>
-                <li>
-                    <a href="#">
+            </ul>
+
+            <!--右侧的导航菜单-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">
+                    <span>China(简体中文)</span>
+                    <span class="glyphicon glyphicon-globe"></span>
+                </a></li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown">
                         <span>登录</span>
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </a>
+                    <div class="dropdown-menu">
+                        <div class="login-menu">
+                            <h4>用户登录</h4>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
-
 </div>
 
 <div class="main">
     <div class="container">
+        <h2>欢迎来到英特尔&reg;</h2>
+
         <div class="row">
             <div class="col-sm-12 col-md-8">1大 <br> 1大</div>
             <div class="col-sm-12 col-md-4">
@@ -152,15 +161,15 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  (function () {
-    var s = document.createElement("script");
-    s.onload = function () {
-      bootlint.showLintReportForCurrentDocument([]);
-    };
-    s.src = "https://maxcdn.bootstrapcdn.com/bootlint/latest/bootlint.min.js";
-    document.body.appendChild(s)
-  })();
-</script>
+<!--<script type="text/javascript">-->
+<!--(function () {-->
+<!--var s = document.createElement("script");-->
+<!--s.onload = function () {-->
+<!--bootlint.showLintReportForCurrentDocument([]);-->
+<!--};-->
+<!--s.src = "https://maxcdn.bootstrapcdn.com/bootlint/latest/bootlint.min.js";-->
+<!--document.body.appendChild(s)-->
+<!--})();-->
+<!--</script>-->
 </body>
 </html>

@@ -13,9 +13,45 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style type="text/css">
+        .carousel img {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
+<div class="container">
+    <div id="ad" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <!--随着轮播滚动的内容-->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="img/t1.jpg" alt="t1">
+            </div>
+            <div class="item">
+                <img src="img/t2.png" alt="t2">
+            </div>
+            <div class="item">
+                <img src="img/t3.jpg" alt="t3">
+            </div>
+        </div>
+        <!--不随着轮播滚动的内容: 左右指示-->
+        <a data-slide="prev" href="#ad" class="carousel-control left">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a data-slide="next" href="#ad" class="carousel-control right">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+
+        <!--不随着轮播滚动的内容：底部指示-->
+        <ul class="carousel-indicators">
+            <li data-slide-to="0" class="active" data-target="#ad"></li>
+            <li data-slide-to="1" data-target="#ad"></li>
+            <li data-slide-to="2" data-target="#ad"></li>
+        </ul>
+    </div>
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>

@@ -1,0 +1,92 @@
+body {
+    font-family: 'SimHei';
+    margin-top: 50px;
+}
+
+.logo {
+    display: inline-block;
+    width: 63px;
+    height: 42px;
+    background: url("../img/hdr-spr.png") 0 -512px no-repeat;
+    margin-top: -11px;
+}
+
+.login-menu {
+    padding: 15px;
+    width: 400px;
+    height: 300px;
+}
+
+.main {
+
+}
+
+.big {
+    position: relative;
+}
+
+.big .caption {
+    padding: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .big .caption {
+        /*绝对定位，固定在最下方撑满*/
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.small {
+    position: relative;
+    overflow: hidden;
+}
+
+.small .mask {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80%;
+    height: 100%;
+    width: 100%;
+    transition: top .3s linear;
+}
+
+.small .mask:hover {
+    top: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .small2 {
+        padding: 16px;
+    }
+
+    .small2 li {
+        line-height: 1.9em;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .small2 {
+        padding: 16px;
+    }
+
+    .small2 li {
+        line-height: 2em;
+    }
+}
+
+.mylogo {
+    height: 42px;
+    width: 63px;
+    background: url("../img/hdr-spr.png") no-repeat center;
+    background-position: 0 -513px;
+    margin-top: -5px;
+}
+
+.footer {
+
+}

@@ -7,3 +7,5 @@
 - CH03: 京东首页实战项目
 - CH04: CSS3 Core
 - CH05: 京东详情页实战项目
+- CH16: HTML5Core
+- CH18: Bootstrap
